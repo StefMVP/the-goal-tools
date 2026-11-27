@@ -1,0 +1,67 @@
+{
+ "id": "five-steps-loop",
+ "title": "Five focusing steps",
+ "kind": "loop",
+ "concepts": [
+  "five-focusing-steps",
+  "inertia",
+  "pooi"
+ ],
+ "chapters": [
+  36,
+  37
+ ],
+ "nodes": [
+  {
+   "id": "s1",
+   "label": "1 Identify the constraint"
+  },
+  {
+   "id": "s2",
+   "label": "2 Decide how to exploit it"
+  },
+  {
+   "id": "s3",
+   "label": "3 Subordinate everything else"
+  },
+  {
+   "id": "s4",
+   "label": "4 Elevate the constraint"
+  },
+  {
+   "id": "s5",
+   "label": "5 If broken, go to 1; do not let inertia become the constraint"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2"
+  },
+  {
+   "from": "s2",
+   "to": "s3"
+  },
+  {
+   "from": "s3",
+   "to": "s4"
+  },
+  {
+   "from": "s4",
+   "to": "s5"
+  },
+  {
+   "from": "s5",
+   "to": "s1",
+   "label": "repeat (POOGI)"
+  }
+ ],
+ "notes": [
+  "Steps 2 and 3 cost almost nothing; step 4 costs money. Do them in order."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "bk-theory-of-constraints"
+ ]
+}

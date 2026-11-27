@@ -1,0 +1,88 @@
+{
+ "id": "efficiency-cloud",
+ "title": "Evaporating cloud: keep busy vs let non-bottlenecks idle",
+ "kind": "cloud",
+ "concepts": [
+  "evaporating-cloud",
+  "local-efficiency-fallacy",
+  "activation-vs-utilization",
+  "injection"
+ ],
+ "chapters": [],
+ "nodes": [
+  {
+   "id": "A",
+   "label": "A: Make money now and in the future",
+   "type": "objective"
+  },
+  {
+   "id": "B",
+   "label": "B: Control operating expense",
+   "type": "need"
+  },
+  {
+   "id": "C",
+   "label": "C: Protect throughput and lead time",
+   "type": "need"
+  },
+  {
+   "id": "D",
+   "label": "D: Keep every resource busy (high efficiency)",
+   "type": "want"
+  },
+  {
+   "id": "Dp",
+   "label": "D': Let non-bottlenecks idle when no constraint work",
+   "type": "want"
+  },
+  {
+   "id": "inj",
+   "label": "Injection: OE is fixed per period; idle non-bottleneck time costs nothing",
+   "type": "injection"
+  }
+ ],
+ "edges": [
+  {
+   "from": "B",
+   "to": "A",
+   "type": "necessary"
+  },
+  {
+   "from": "C",
+   "to": "A",
+   "type": "necessary"
+  },
+  {
+   "from": "D",
+   "to": "B",
+   "type": "necessary",
+   "label": "assumption: idle labor is wasted cost"
+  },
+  {
+   "from": "Dp",
+   "to": "C",
+   "type": "necessary",
+   "label": "assumption: extra activation only adds WIP"
+  },
+  {
+   "from": "D",
+   "to": "Dp",
+   "type": "conflict"
+  },
+  {
+   "from": "inj",
+   "to": "D",
+   "type": "injection",
+   "label": "breaks B-D assumption"
+  }
+ ],
+ "notes": [
+  "Read: to have A we must have B; to have B we must D, because idle labor is waste.",
+  "Constructed for this corpus from the plant conflict in the book."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "bk-dettmer-logical-thinking-process"
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "seed": 1, "reps": 30, "horizon": 60,
+ "calendars": {"week": {"days": [0, 1, 2, 3, 4], "hours": [9, 17]}},
+ "resources": {"tech": {"cap": 1, "calendar": "week"}},
+ "arrivals": {"gap": {"exp": 0.5}, "count": 100},
+ "steps": [
+  {"name": "triage", "work": {"fixed": 0.01}},
+  {"name": "parts", "wait": {"tri": [1, 2, 6]}},
+  {"name": "repair", "resource": "tech", "work": {"lognorm": [0.06, 0.15]}, "fail": {"p": 0.1, "extra": 1}},
+  {"name": "release", "after": ["repair"], "gate": {"period": 7, "at": [1.5, 3.5]}}
+ ],
+ "census": [30]
+}

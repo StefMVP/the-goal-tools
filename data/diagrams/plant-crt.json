@@ -1,0 +1,159 @@
+{
+ "id": "plant-crt",
+ "title": "Current Reality Tree of the plant (constructed from the book's UDEs)",
+ "kind": "tree",
+ "concepts": [
+  "current-reality-tree",
+  "undesirable-effect",
+  "local-efficiency-fallacy",
+  "policy-constraint"
+ ],
+ "chapters": [],
+ "nodes": [
+  {
+   "id": "root",
+   "label": "Plant measures each resource on local efficiency",
+   "type": "root"
+  },
+  {
+   "id": "c1",
+   "label": "Supervisors keep every worker and machine busy",
+   "type": "entity"
+  },
+  {
+   "id": "c2",
+   "label": "Material is released whenever a resource is free",
+   "type": "entity"
+  },
+  {
+   "id": "c3",
+   "label": "Large batches are run to save setups",
+   "type": "entity"
+  },
+  {
+   "id": "c4",
+   "label": "Bottleneck capacity is less than demand",
+   "type": "entity"
+  },
+  {
+   "id": "c5",
+   "label": "Work centers process parts in their own order",
+   "type": "entity"
+  },
+  {
+   "id": "u1",
+   "label": "UDE: WIP and finished stock are high",
+   "type": "ude"
+  },
+  {
+   "id": "u2",
+   "label": "UDE: orders ship late",
+   "type": "ude"
+  },
+  {
+   "id": "u3",
+   "label": "UDE: expediting and overtime are routine",
+   "type": "ude"
+  },
+  {
+   "id": "u4",
+   "label": "UDE: lead times are long",
+   "type": "ude"
+  },
+  {
+   "id": "u5",
+   "label": "UDE: the plant loses money",
+   "type": "ude"
+  },
+  {
+   "id": "c6",
+   "label": "Bottleneck works on parts not needed now",
+   "type": "entity"
+  }
+ ],
+ "edges": [
+  {
+   "from": "root",
+   "to": "c1",
+   "type": "cause"
+  },
+  {
+   "from": "c1",
+   "to": "c2",
+   "type": "cause"
+  },
+  {
+   "from": "root",
+   "to": "c3",
+   "type": "cause"
+  },
+  {
+   "from": "c2",
+   "to": "u1",
+   "type": "cause"
+  },
+  {
+   "from": "c3",
+   "to": "u1",
+   "type": "cause"
+  },
+  {
+   "from": "u1",
+   "to": "u4",
+   "type": "cause"
+  },
+  {
+   "from": "c2",
+   "to": "c6",
+   "type": "and",
+   "group": "g1"
+  },
+  {
+   "from": "c5",
+   "to": "c6",
+   "type": "and",
+   "group": "g1"
+  },
+  {
+   "from": "c6",
+   "to": "u2",
+   "type": "and",
+   "group": "g2"
+  },
+  {
+   "from": "c4",
+   "to": "u2",
+   "type": "and",
+   "group": "g2"
+  },
+  {
+   "from": "u2",
+   "to": "u3",
+   "type": "cause"
+  },
+  {
+   "from": "u3",
+   "to": "u5",
+   "type": "cause"
+  },
+  {
+   "from": "u1",
+   "to": "u5",
+   "type": "cause"
+  },
+  {
+   "from": "u2",
+   "to": "u5",
+   "type": "cause"
+  }
+ ],
+ "notes": [
+  "The book does not draw a CRT. This tree links the plant problems it shows; root = local efficiency policy.",
+  "AND groups g1, g2: both causes are needed."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "bk-dettmer-logical-thinking-process"
+ ]
+}

@@ -1,0 +1,532 @@
+#!/usr/bin/env python3
+"""The Goal toolkit CLI. JSON when piped or with --json; short text on a terminal."""
+import argparse
+import json
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+sys.path.insert(0, ROOT)
+from goal import core, des, tp  # noqa: E402
+from goal.data import load  # noqa: E402
+
+TABS = ["map", "dice", "flow", "finder", "tioe", "buffers", "machines"]
+STEPS = {"identify": {}, "exploit": {"exploit": True}, "subordinate": {"exploit": True, "rope": True},
+         "elevate": {"exploit": True, "rope": True, "elevate": 2}}
+JSON_OUT = not sys.stdout.isatty()
+
+
+def emit(obj, text=None):
+    if JSON_OUT or text is None:
+        print(json.dumps(obj, ensure_ascii=False, indent=None if JSON_OUT else 1))
+    else:
+        print(text(obj) if callable(text) else text)
+        for k in ("url", "shot"):
+            if isinstance(obj, dict) and obj.get(k):
+                print("%s %s" % (k, obj[k]))
+
+
+def die(msg, code=2):
+    print(json.dumps({"error": msg}) if JSON_OUT else "error: " + msg, file=sys.stderr)
+    sys.exit(code)
+
+
+def cmd_chapters(a):
+    ch = load()["chapters"]
+    if a.concept:
+        ch = [c for c in ch if a.concept in c.get("concepts", [])]
+    emit(ch, lambda r: "\n".join("%2d  %-34s %s" % (c["n"], c["title"], ", ".join(c.get("concepts", []))) for c in r))
+
+
+def cmd_concept(a):
+    d = load()
+    c = next((x for x in d["concepts"] if x["id"] == a.id), None)
+    if not c:
+        die("unknown concept: %s (try: goal search %s)" % (a.id, a.id))
+    c = dict(c, chapter_titles={x["n"]: x["title"] for x in d["chapters"] if x["n"] in c.get("chapters", [])})
+    emit(c, lambda c: "%s\n%s\nformula: %s\nchapters: %s\nrelated: %s\ntools: %s" % (
+        c["name"], c.get("one_line", ""), c.get("formula") or "-", c.get("chapters"), ", ".join(c.get("related", [])), ", ".join(c.get("tools", []))))
+
+
+def cmd_search(a):
+    q = a.q.lower()
+    d = load()
+    hits = []
+    for kind in ("concepts", "chapters", "tools", "books", "sources"):
+        for x in d[kind]:
+            blob = json.dumps(x, ensure_ascii=False).lower()
+            if q in blob:
+                hits.append({"kind": kind[:-1], "id": x.get("id", x.get("n")), "name": x.get("name") or x.get("title")})
+    emit(hits, lambda r: "\n".join("%-8s %-28s %s" % (h["kind"], h["id"], h["name"]) for h in r) or "no hits")
+
+
+def cmd_dice(a):
+    lo, hi = (int(x) for x in a.die.split("-"))
+    if not 1 <= lo <= hi <= 6:
+        raise SystemExit("bad --die: %s (use LO-HI, 1 <= LO <= HI <= 6)" % a.die)
+    dc = [[1, 6]] * a.stations
+    if a.slow:
+        dc = [[lo, hi] if i == a.slow - 1 else [1, 6] for i in range(a.stations)]
+    p = {"stations": a.stations, "rounds": a.rounds, "seed": a.seed, "dice": dc, "rope": a.rope, "buffer": a.buffer, "initWip": a.init}
+    r = core.dice(p)
+    r["score"] = core.dice_score(r)
+    if a.optimal:
+        o = core.dice_optimal(p, seeds=a.seeds)
+        o.pop("byRound")
+        st = o["settings"]
+        best = core.dice(dict(p, dice=st["dice"], rope=st["rope"], buffer=st["buffer"], initWip=st["initWip"]))
+        o["run"] = {"totals": best["totals"], "score": core.dice_score(best)}
+        r["optimal"] = o
+    if not a.full:
+        r = {k: v for k, v in r.items() if k != "rounds"}
+
+    def text(r):
+        s = r["score"]
+        lines = ["score %d %s  T%% %s  I%% %s  avg WIP %s / needed %s" % (s["score"], s["grade"], s["tPct"], s["iPct"], s["avgWip"], s["needed"]),
+                 "herbie S%d  " % (r["herbie"] + 1) + "  ".join("%s %s" % kv for kv in r["totals"].items())]
+        o = r.get("optimal")
+        if o:
+            st = o["settings"]
+            lines.append("mean of %d seeds: score %s -> %s  T%% %s -> %s  avg WIP %s -> %s" % (
+                o["seeds"], o["current"]["score"], o["optimal"]["score"], o["current"]["tPct"], o["optimal"]["tPct"], o["current"]["avgWip"], o["optimal"]["avgWip"]))
+            lines.append("optimal: herbie S%d  rope %s  buffer %s  init %s  changed %s" % (
+                st["herbie"] + 1, "on" if st["rope"] else "off", st["buffer"], st["initWip"], ",".join(o["changed"]) or "none"))
+        return "\n".join(lines)
+    q = {"n": a.stations, "rounds": a.rounds, "seed": a.seed, "init": a.init, "buf": a.buffer}
+    if a.slow:
+        q.update(slow=1, hp=a.slow, lo=lo, hi=hi)
+    if a.rope:
+        q["rope"] = 1
+    emit(link(r, "dice", urlencode(q)), text)
+
+
+def urlencode(q):
+    import urllib.parse
+    return urllib.parse.urlencode(q)
+
+
+def flow_query(a, st):
+    q = {"st": enc(st), "days": a.days, "seed": a.seed, "tu": a.tu, "oe": a.oe, "ec": a.ec, "ic": a.ic, "bud": a.budget}
+    q.update({k: v for k, v in (("ex", 1 if a.exploit else 0), ("rope", 1 if a.rope else 0), ("buf", a.buffer), ("add", a.add)) if v})
+    return urlencode({k: (int(v) if isinstance(v, float) and v.is_integer() else v) for k, v in q.items()})
+
+
+def cmd_flow(a):
+    st = json.load(open(a.stages))
+    st = st.get("stages", st) if isinstance(st, dict) else st
+    steps = list(STEPS) if a.step == "all" else [a.step]
+    out = {}
+    for s in steps:
+        pol = dict(STEPS[s])
+        if "elevate" in pol:
+            pol["elevate"] = a.elevate
+        r = core.flow({"stages": st, "days": a.days, "seed": a.seed, "policy": pol})
+        out[s] = {"constraint": st[r["constraint"]]["name"], "totals": r["totals"]}
+    if a.optimal:
+        prob = {"stages": st, "days": a.days, "econ": {"tu": a.tu, "oe": a.oe, "ec": a.ec, "ic": a.ic, "budget": a.budget}}
+        mine = {"exploit": a.exploit, "rope": a.rope, "add": a.add}
+        if a.buffer:
+            mine["buffer"] = a.buffer
+        o = core.flow_optimal(prob, seeds=a.seeds)
+        hl = core.flow_headline(prob, mine, o)
+        res = {"seeds": a.seeds, "mine": hl["mine"], "optimal": hl["optimal"], "mineOptimal": hl["mineOptimal"], "transferBatch": 1}
+
+        def line(k):
+            x = res[k]
+            st_ = x["settings"]
+            return "%-8s net/day %-9s exploit %-5s rope %-5s buffer %-6s +cap %s" % (k, x["net"], st_["exploit"], st_["rope"], st_.get("buffer", "2 days") if st_["rope"] else "-", st_["add"])
+        emit(link(res, "flow", flow_query(a, st)), lambda r: "\n".join([line("mine"), line("optimal"), "mine is optimal" if r["mineOptimal"] else "copy optimal: transfer batch 1"]))
+        return
+    emit(link(out, "flow", flow_query(a, st)), lambda o: "\n".join("%-12s constraint %-10s T/day %-6s WIP %-7s LT %s" % (k, v["constraint"], v["totals"]["perDay"], v["totals"]["avgWip"], v["totals"]["leadTime"]) for k, v in o.items()))
+
+
+def cmd_buffers(a):
+    tasks = [float(x) for x in a.tasks.split(",")]
+    p = {"tasks": tasks, "spread": a.spread, "target": a.target / 100, "base": "sum" if a.kind == "ccpm" else "none", "seeds": a.seeds}
+    o = core.buffer_optimal(p)
+    hl = core.buffer_headline(p, a.mine, o)
+    res = {"kind": a.kind, "target": a.target, "mine": hl["mine"], "optimal": hl["optimal"], "mineOptimal": hl["mineOptimal"], "curve": o["curve"]}
+    emit(res, lambda r: "\n".join("%-8s buffer %-4s service %.1f%%%s" % (k, r[k]["buffer"], 100 * r[k]["service"], "" if r[k]["met"] else "  below target") for k in ("mine", "optimal"))
+         + ("\nmine is optimal" if r["mineOptimal"] else ""))
+
+
+def cmd_analyze(a):
+    text = sys.stdin.read() if a.csv == "-" else open(a.csv).read()
+    r = core.analyze(core.parse_csv(text), {"asOf": a.as_of})
+    if not a.full:
+        r = {k: v for k, v in r.items() if k != "lanes"}
+
+    def txt(r):
+        c = r["constraint"]
+        lines = ["constraint %s  %d%% of days  items %d  open %d  median lead %s d" % (c["stage"], round(c["share"] * 100), r["items"], len(r["aging"]), r["leadTime"]["median"])]
+        lines += ["  %-14s %7.1f d  %3d%%  cum %3d%%" % (p["key"], p["days"], round(p["share"] * 100), round(p["cumShare"] * 100)) for p in r["pareto"]]
+        if r["causes"]:
+            lines.append("causes:")
+            lines += ["  %-20s %7.1f d  cum %3d%%" % (p["key"], p["days"], round(p["cumShare"] * 100)) for p in r["causes"]]
+        return "\n".join(lines)
+    name = "stdin" if a.csv == "-" else os.path.basename(a.csv)
+    emit(link(r, "finder", run={"name": name, "csv": text, "asOf": a.as_of, "unit": a.unit}), txt)
+
+
+def cmd_mix(a):
+    m = json.load(open(a.file))
+    emit(link(core.product_mix(m), "tioe", "m=" + enc(m)))
+
+
+def cmd_machines(a):
+    over = {}
+    for kv in a.set or []:
+        k, _, v = kv.partition("=")
+        over[k] = v
+    inp = core.machine_inputs(a.preset, over)
+    r = dict(core.machines(inp), policy=core.machines_optimal(inp))
+    pr = core.MACHINE_PRESETS.get(a.preset or "", {})
+    r = dict(r, preset=a.preset, title=pr.get("title"), chapters=pr.get("chapters"))
+
+    def text(r):
+        rows = ["%-5s cost/part $%-6g eff %5g%%  parts/day %-6g T/day $%-7g I/day $%-6g OE/day $%-7g NP/day $%-7g %s" % (
+            o["id"], o["cost"]["costPerPart"], o["cost"]["efficiency"], o["tioe"]["parts"], o["tioe"]["T"], o["tioe"]["iPerDay"],
+            o["tioe"]["OE"], o["tioe"]["netProfit"], o["tioe"]["constraint"]) for o in r["options"]]
+        po = r["policy"]
+
+        def pol(x):
+            return "old=%s breaks=%s runs %s NP/day $%g" % (x["old"], x["breaks"], x["run"], x["tioe"]["netProfit"])
+        return "\n".join(rows + ["cost view picks: %s  throughput view picks: %s  plan: %s" % (r["costPick"], r["throughputPick"], r["plan"]),
+                                  "mine:    " + pol(po["mine"]), "optimal: " + pol(po["optimal"]) + ("  (mine is optimal)" if po["same"] else "")])
+    emit(link(r, "machines", urlencode(dict([("preset", a.preset)] if a.preset else [], **over))), text)
+
+
+def read_doc(path):
+    text = sys.stdin.read() if path == "-" else open(path).read()
+    try:
+        return json.loads(text)
+    except ValueError:
+        return tp.parse_dsl(text)
+
+
+def cmd_tp(a, kind_default):
+    if a.action == "new":
+        k = a.kind or kind_default
+        if k != "cloud" and k not in tp.TREES:
+            die("kind: cloud or one of " + ", ".join(tp.TREES))
+        emit(tp.new_doc(k))
+        return
+    if not a.file:
+        die("file required (JSON or tree DSL, - for stdin)")
+    doc = read_doc(a.file)
+    if a.action == "validate":
+        issues = tp.validate(doc)
+        ok = not any(i["level"] == "error" for i in issues)
+        emit({"ok": ok, "issues": issues}, lambda r: "ok" if r["ok"] and not issues else "\n".join("%s: %s" % (i["level"], i["msg"]) for i in issues))
+        sys.exit(0 if ok else 1)
+    sys.stdout.write(tp.render_svg(doc) if a.format == "svg" else tp.render_md(doc))
+
+
+CASES = os.path.join(ROOT, "local", "cases")
+CASES_JS = os.path.join(ROOT, "local", "cases.js")
+
+
+def url(tab, query=""):
+    return "file://" + os.path.join(ROOT, "app", "index.html") + "#/" + tab + (("?" + query) if query else "")
+
+
+RUNS = os.path.join(ROOT, "local", "runs")
+RUNS_JS = os.path.join(ROOT, "local", "runs.js")
+SHOW = {"show": False, "shot": None, "width": 1440, "height": 900, "full": False}
+
+
+def enc(obj):
+    """Same as Goal.enc in app/ui.js: base64url of compact JSON, no padding."""
+    import base64
+    raw = json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode()
+    return base64.urlsafe_b64encode(raw).decode().rstrip("=")
+
+
+def write_run(run):
+    """Save one run in local/runs/ID.json and rebuild local/runs.js. Returns the run id."""
+    import hashlib
+    rid = hashlib.sha1(json.dumps(run, sort_keys=True).encode()).hexdigest()[:8]
+    os.makedirs(RUNS, exist_ok=True)
+    with open(os.path.join(RUNS, rid + ".json"), "w") as fh:
+        json.dump(run, fh)
+    parts = ["/* Built by bin/goal --show. Do not edit. */\nwindow.GOAL_RUNS = {};\n"]
+    for f in sorted(os.listdir(RUNS)):
+        if f.endswith(".json"):
+            with open(os.path.join(RUNS, f)) as fh:
+                parts.append("window.GOAL_RUNS[%s] = %s;\n" % (json.dumps(f[:-5]), fh.read()))
+    with open(RUNS_JS, "w") as fh:
+        fh.write("".join(parts))
+    return rid
+
+
+def link(obj, tab, query="", run=None):
+    """With --show or --shot: add the app URL (and a screenshot) to the command output."""
+    if not (SHOW["show"] or SHOW["shot"]):
+        return obj
+    if run is not None:
+        query = "run=" + write_run(dict(run, tab=tab)) + ("&" + query if query else "")
+    obj = dict(obj)
+    obj["url"] = url(tab, query)
+    if SHOW["shot"]:
+        obj["shot"] = shoot(obj["url"], SHOW["shot"], SHOW["width"], SHOW["height"], SHOW["full"])
+    return obj
+
+
+def handler(public=False):
+    import http.server
+    import posixpath
+    import urllib.parse
+
+    class H(http.server.SimpleHTTPRequestHandler):
+        """Serve app/ and local/cases.js, local/runs.js only. A missing local script = empty script."""
+        def log_message(self, *args):
+            pass
+
+        def do_GET(self):
+            path = posixpath.normpath(urllib.parse.unquote(self.path.split("?")[0].split("#")[0]))
+            local = {"/local/cases.js": CASES_JS, "/local/runs.js": RUNS_JS}
+            if path in local and (not os.path.isfile(local[path]) or (public and path == "/local/cases.js")):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/javascript")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+            elif path in local or path.startswith("/app/"):
+                self.path = path
+                super().do_GET()
+            else:
+                self.send_error(404)
+    return H
+
+
+def shoot(target, out, width=1440, height=900, full=False, public=False):
+    """Screenshot an app URL (file://, http, or TAB?QUERY) with playwright-cli. Returns the PNG path."""
+    import functools
+    import http.server
+    import shutil
+    import subprocess
+    import threading
+    if not shutil.which("playwright-cli"):
+        die("shot: playwright-cli not on PATH")
+    frag = target.split("#", 1)[1] if "#" in target else "/" + target.lstrip("/")
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(handler(public), directory=ROOT))
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    page = "http://127.0.0.1:%d/app/index.html#%s" % (srv.server_address[1], frag)
+    ses = "goal-shot-%d" % os.getpid()
+    out = os.path.abspath(out)
+    pw = lambda *a: subprocess.run(["playwright-cli", "-s=" + ses] + list(a), capture_output=True, text=True)
+    try:
+        r = pw("open", "about:blank", "--browser=chromium")
+        if r.returncode:
+            die("shot: " + (r.stderr or r.stdout).strip()[:300])
+        pw("resize", str(width), str(height))
+        pw("goto", page)
+        pw("eval", "() => new Promise(r => setTimeout(() => r(document.fonts ? document.fonts.ready.then(() => 1) : 1), 600))")
+        r = pw("screenshot", "--filename=" + out, *(["--full-page"] if full else []))
+        if r.returncode or not os.path.isfile(out):
+            die("shot: " + (r.stderr or r.stdout).strip()[:300])
+    finally:
+        pw("close")
+        srv.shutdown()
+    return out
+
+
+def cmd_shot(a):
+    t = a.target
+    if "://" not in t and t.split("?")[0].split("/")[0] not in TABS + ["case"]:
+        die("shot: target is a URL or TAB[?QUERY]; tabs: " + ", ".join(TABS))
+    emit({"shot": shoot(t, a.out, a.width, a.height, a.full, a.public)}, lambda r: r["shot"])
+
+
+def case_names():
+    return sorted(n for n in os.listdir(CASES) if os.path.isdir(os.path.join(CASES, n))) if os.path.isdir(CASES) else []
+
+
+def write_cases_js():
+    """local/cases.js = data.js + tab.js of each case. The app loads it when present."""
+    parts = ["/* Built by bin/goal case build. Do not edit. */\n"]
+    for n in case_names():
+        parts.append("window.GOAL_CASE_NAME = %s;\n" % json.dumps(n))
+        for f in ("data.js", "tab.js"):
+            path = os.path.join(CASES, n, f)
+            if os.path.isfile(path):
+                with open(path) as fh:
+                    parts.append("/* %s/%s */\n%s\n" % (n, f, fh.read()))
+    with open(CASES_JS, "w") as fh:
+        fh.write("".join(parts))
+
+
+def cmd_case(a):
+    import subprocess
+    names = case_names()
+    if a.action == "list":
+        emit({"cases": names, "dir": CASES}, lambda r: "\n".join(r["cases"]) or "no cases in " + CASES)
+        return
+    if a.name not in names:
+        die("case: " + (", ".join(names) or "none in " + CASES + " (copy examples/case-template)"))
+    if a.action == "build":
+        sh = os.path.join(CASES, a.name, "build.sh")
+        if os.path.isfile(sh):
+            r = subprocess.run(["bash", sh] + a.args, stdout=sys.stderr)
+            if r.returncode:
+                sys.exit(r.returncode)
+        write_cases_js()
+        emit({"ok": True, "case": a.name, "out": CASES_JS}, lambda r: "wrote " + r["out"])
+    else:
+        print(url("case/" + a.name))
+
+
+def cmd_open(a):
+    if a.tab not in TABS:
+        die("tab: " + ", ".join(TABS))
+    print(url(a.tab, a.query or ""))
+
+
+def cmd_serve(a):
+    import functools
+    import http.server
+    h = functools.partial(handler(), directory=ROOT)
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", a.port), h)
+    print("http://127.0.0.1:%d/app/index.html#/map" % srv.server_address[1], flush=True)
+    srv.serve_forever()
+
+
+def cmd_des(a):
+    m = json.load(open(a.model))
+    for k in ("reps", "seed", "horizon"):
+        if getattr(a, k) is not None:
+            m[k] = getattr(a, k)
+    try:
+        r = des.simulate(m)
+    except (KeyError, ValueError) as e:
+        die("model: %s" % e)
+    emit(r, lambda r: "lead median %s d (p10 %s, p90 %s), done %s\n" % (
+        r["lead_median"]["p50"], r["lead_median"]["p10"], r["lead_median"]["p90"], r["done"]["p50"]) + "\n".join(
+        "%-24s %8.1f d" % (n, v["p50"]) for n, v in r["step_total"].items()))
+
+
+def main():
+    global JSON_OUT
+    p = argparse.ArgumentParser(prog="goal", description="The Goal (Eliyahu M. Goldratt) toolkit: data, simulators, analyzer, thinking-process docs.")
+    p.add_argument("--json", action="store_true", help="force JSON output")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("chapters", help="list chapters")
+    s.add_argument("--concept")
+    s.set_defaults(fn=cmd_chapters)
+    s = sub.add_parser("concept", help="show one concept")
+    s.add_argument("id")
+    s.set_defaults(fn=cmd_concept)
+    s = sub.add_parser("search", help="search all data")
+    s.add_argument("q")
+    s.set_defaults(fn=cmd_search)
+    s = sub.add_parser("sim", help="simulators")
+    ss = s.add_subparsers(dest="sim", required=True)
+    d = ss.add_parser("dice", help="dice game (seeded)")
+    d.add_argument("--seed", type=int, default=7)
+    d.add_argument("--stations", type=int, default=5)
+    d.add_argument("--rounds", type=int, default=20)
+    d.add_argument("--slow", type=int, default=0, help="station number (1-based) with the slow die")
+    d.add_argument("--die", default="1-4", help="slow die faces LO-HI (default 1-4)")
+    d.add_argument("--rope", action="store_true")
+    d.add_argument("--buffer", type=int, default=6)
+    d.add_argument("--init", type=int, default=4, help="start WIP per queue")
+    d.add_argument("--full", action="store_true", help="include every round")
+    d.add_argument("--optimal", action="store_true", help="search Herbie position, rope, buffer, start WIP for max mean score")
+    d.add_argument("--seeds", type=int, default=20, help="seeds for --optimal (1..N)")
+    d.set_defaults(fn=cmd_dice)
+    s = sub.add_parser("flow", help="five focusing steps on your stages")
+    s.add_argument("--stages", required=True, help='JSON: [{"name","cap","var","wip"}]')
+    s.add_argument("--days", type=int, default=30)
+    s.add_argument("--seed", type=int, default=3)
+    s.add_argument("--elevate", type=float, default=2)
+    s.add_argument("--step", choices=list(STEPS) + ["all"], default="all")
+    s.add_argument("--optimal", action="store_true", help="best exploit, rope buffer, +cap under budget for max mean net/day; compare with mine")
+    s.add_argument("--seeds", type=int, default=20)
+    s.add_argument("--tu", type=float, default=100, help="T per unit")
+    s.add_argument("--oe", type=float, default=500, help="OE per day")
+    s.add_argument("--ec", type=float, default=60, help="cost per day of +1 cap at the constraint")
+    s.add_argument("--ic", type=float, default=5, help="I cost per WIP unit per day")
+    s.add_argument("--budget", type=float, default=300, help="max elevate spend per day")
+    s.add_argument("--exploit", action="store_true", help="mine: exploit")
+    s.add_argument("--rope", action="store_true", help="mine: rope")
+    s.add_argument("--buffer", type=int, default=0, help="mine: rope buffer units (0 = 2 days)")
+    s.add_argument("--add", type=int, default=0, help="mine: +cap at the constraint")
+    s.set_defaults(fn=cmd_flow)
+    s = sub.add_parser("buffers", help="optimal buffer: smallest buffer that meets the target service level")
+    s.add_argument("kind", choices=["dbr", "ccpm"], help="dbr: time buffer covers the route; ccpm: buffer covers the overrun of the chain")
+    s.add_argument("--tasks", required=True, help="task or step days, comma separated (e.g. 1.5,1.5,1.5)")
+    s.add_argument("--spread", type=float, default=0.4, help="0..1; time per task from 1 - s/2 to 1 + 2s of the estimate")
+    s.add_argument("--target", type=float, default=90, help="service level %%")
+    s.add_argument("--mine", type=int, default=6, help="mine: buffer days")
+    s.add_argument("--seeds", type=int, default=20)
+    s.add_argument("--optimal", action="store_true", help="accepted for symmetry; the optimum is always computed")
+    s.set_defaults(fn=cmd_buffers)
+    s = sub.add_parser("des", help="discrete-event flow simulation of a model JSON (steps, resources, calendars)")
+    s.add_argument("model")
+    s.add_argument("--reps", type=int)
+    s.add_argument("--seed", type=int)
+    s.add_argument("--horizon", type=float)
+    s.set_defaults(fn=cmd_des)
+    s = sub.add_parser("analyze", help="bottleneck finder on a CSV (id,stage,start,end,cause,owner)")
+    s.add_argument("csv", help="path or -")
+    s.add_argument("--as-of")
+    s.add_argument("--full", action="store_true", help="include per-item lanes")
+    s.add_argument("--unit", default="item", help="word for one row id in the app, e.g. deal, order (default item)")
+    s.set_defaults(fn=cmd_analyze)
+    s = sub.add_parser("mix", help="product mix: cost view vs constraint view")
+    s.add_argument("file", help='JSON: {"products","resources","oe"}')
+    s.set_defaults(fn=cmd_mix)
+    s = sub.add_parser("machines", help="old machines vs new machine: cost view vs throughput view")
+    s.add_argument("--preset", choices=sorted(core.MACHINE_PRESETS))
+    s.add_argument("--set", action="append", metavar="KEY=VALUE", help="override an input, e.g. new.down=20 (repeat)")
+    s.set_defaults(fn=cmd_machines)
+    for name, default in (("cloud", "cloud"), ("tree", "crt")):
+        s = sub.add_parser(name, help="thinking process docs: new | validate | render")
+        s.add_argument("action", choices=["new", "validate", "render"])
+        s.add_argument("file", nargs="?", help="JSON or DSL file; for new: kind (" + ("cloud" if name == "cloud" else "crt|frt|prt|tt") + ")")
+        s.add_argument("--format", choices=["md", "svg"], default="md")
+        s.set_defaults(fn=lambda a, d=default: cmd_tp(a, d))
+    s = sub.add_parser("open", help="print the app URL for a tab")
+    s.add_argument("tab")
+    s.add_argument("query", nargs="?", help="e.g. seed=3&rope=1")
+    s.set_defaults(fn=cmd_open)
+    s = sub.add_parser("case", help="private cases in local/cases/: list | build NAME [args] | open NAME")
+    s.add_argument("action", choices=["list", "build", "open"])
+    s.add_argument("name", nargs="?")
+    s.add_argument("args", nargs=argparse.REMAINDER, help="passed to the case build.sh")
+    s.set_defaults(fn=cmd_case)
+    s = sub.add_parser("shot", help="screenshot an app URL or TAB[?QUERY] to PNG (playwright-cli)")
+    s.add_argument("target")
+    s.add_argument("--out", default="goal-shot.png")
+    s.add_argument("--width", type=int, default=1440)
+    s.add_argument("--height", type=int, default=900)
+    s.add_argument("--full", action="store_true", help="full page")
+    s.add_argument("--public", action="store_true", help="hide private case tabs (local/cases.js)")
+    s.set_defaults(fn=cmd_shot)
+    s = sub.add_parser("serve", help="serve the app on localhost")
+    s.add_argument("--port", type=int, default=0)
+    s.set_defaults(fn=cmd_serve)
+    argv = sys.argv[1:]
+    JSON_OUT = JSON_OUT or "--json" in argv
+    if "--show" in argv:
+        SHOW["show"] = True
+        argv = [x for x in argv if x != "--show"]
+    for i, x in enumerate(argv):
+        if x == "--shot" and i + 1 < len(argv) and (i == 0 or argv[0] != "shot"):
+            SHOW["shot"] = argv[i + 1]
+            argv = argv[:i] + argv[i + 2:]
+            break
+        if x.startswith("--shot="):
+            SHOW["shot"] = x.split("=", 1)[1]
+            argv = argv[:i] + argv[i + 1:]
+            break
+    a = p.parse_args([x for x in argv if x != "--json"])
+    if getattr(a, "action", None) == "new":
+        a.kind = a.file
+    a.fn(a)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (OSError, ValueError, KeyError) as e:
+        die(str(e))

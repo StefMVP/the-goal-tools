@@ -1,0 +1,1042 @@
+{
+ "books": [
+  {
+   "id": "its-not-luck",
+   "title": "It's Not Luck",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1994,
+   "level": 1,
+   "key_concepts": [
+    "Sequel to The Goal: Alex Rogo runs a group of companies",
+    "Constraint moves from plant to market",
+    "Thinking Processes: CRT, Evaporating Cloud, FRT, PRT, TT",
+    "Find the core conflict below many undesirable effects (UDEs)",
+    "Segment the market; do not cut price for all",
+    "Policy constraints are more common than physical constraints"
+   ],
+   "concepts": [
+    "thinking-processes",
+    "evaporating-cloud",
+    "current-reality-tree",
+    "future-reality-tree",
+    "prerequisite-tree",
+    "transition-tree",
+    "market-constraint",
+    "excess-capacity-pricing"
+   ],
+   "link_to_goal": "Applies The Goal's three questions with formal Thinking Process trees, after the constraint moves from production to the market.",
+   "tools": [
+    {
+     "tool": "evaporating-cloud-template",
+     "rank": 1,
+     "why": "Evaporating Cloud (conflict diagram): Objective A <- need B <- want D; A <- need C <- want D'; D conflicts with D'. Write the assumption under each arrow; break one assumption with an injection."
+    },
+    {
+     "tool": "tp-tree-builder",
+     "rank": 2,
+     "why": "Current Reality Tree: List 5-10 UDEs; connect with if-then sufficiency logic; the entity that causes about 70% of UDEs is the core problem. | Future Reality Tree with negative branch reservations: Injection -> if-then chain -> desired effects; test each step for new UDEs."
+    }
+   ],
+   "refs": [
+    "bk-its-not-luck"
+   ]
+  },
+  {
+   "id": "critical-chain",
+   "title": "Critical Chain",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1997,
+   "level": 1,
+   "key_concepts": [
+    "TOC applied to projects",
+    "Critical chain = longest chain of dependent tasks including resource contention",
+    "Task estimates hold hidden safety; Student Syndrome and Parkinson's Law waste it",
+    "Remove safety from tasks; pool it in a project buffer",
+    "Feeding buffers protect the critical chain from non-critical paths",
+    "Multitasking stretches all lead times",
+    "Buffer management: track buffer consumed vs chain complete",
+    "Relay-runner work rule"
+   ],
+   "concepts": [
+    "critical-chain",
+    "buffer-management",
+    "statistical-fluctuations",
+    "bottleneck"
+   ],
+   "link_to_goal": "Moves The Goal from plant to projects: the critical chain is Herbie, pooled buffers replace local safety, and multitasking is the new excess WIP.",
+   "tools": [
+    {
+     "tool": "buffer-board",
+     "rank": 1,
+     "why": "Buffer fever chart: Plot % project buffer consumed vs % critical chain complete. Zones: green (consumed < complete), yellow, red (act)."
+    },
+    {
+     "tool": "ccpm-planner",
+     "rank": 2,
+     "why": "Aggressive estimate + pooled project buffer: Cut each task estimate to ~50% confidence; project buffer ~= 50% of the cut sum (or root-sum-square of cuts). | Stop bad multitasking: Limit active projects (staggering on the constraint resource); finish one task before you start the next."
+    }
+   ],
+   "refs": [
+    "bk-critical-chain"
+   ]
+  },
+  {
+   "id": "haystack-syndrome",
+   "title": "The Haystack Syndrome",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1990,
+   "level": 1,
+   "key_concepts": [
+    "Data is not information; information answers a question",
+    "Throughput accounting: T, I, OE replace cost accounting for decisions",
+    "Product cost allocation gives wrong decisions",
+    "Rank products by throughput per constraint unit",
+    "Information system design: schedule the constraint first (DBR)",
+    "Buffer origins: find causes of buffer holes"
+   ],
+   "concepts": [
+    "throughput-accounting",
+    "product-mix-pq",
+    "capacity-constrained-resource",
+    "cost-world-vs-throughput-world",
+    "buffer-management"
+   ],
+   "link_to_goal": "Turns The Goal's T, I, OE measures into throughput accounting and a constraint-first scheduling information system.",
+   "tools": [
+    {
+     "tool": "product-mix-calc",
+     "rank": 1,
+     "why": "Throughput per constraint unit (T/CU): T = price - truly variable cost; rank items by T / (minutes on constraint). Fill constraint from the top."
+    },
+    {
+     "tool": "tioe-calculator",
+     "rank": 2,
+     "why": "Throughput accounting decision test: Accept a change if delta NP = delta T - delta OE > 0; ROI = (T - OE) / I."
+    },
+    {
+     "tool": "buffer-board",
+     "rank": 3,
+     "why": "Buffer hole analysis: Record which resource caused each late arrival into the buffer; Pareto the causes."
+    }
+   ],
+   "refs": [
+    "bk-haystack-syndrome"
+   ]
+  },
+  {
+   "id": "necessary-but-not-sufficient",
+   "title": "Necessary But Not Sufficient",
+   "author": "Eliyahu M. Goldratt, Eli Schragenheim, Carol A. Ptak",
+   "year": 2000,
+   "level": 1,
+   "key_concepts": [
+    "Business novel about an ERP software company",
+    "Technology is necessary but not sufficient for benefit",
+    "A technology gives benefit only if it removes a limitation",
+    "You must also change the rules that existed because of that limitation",
+    "Six questions to evaluate any technology",
+    "Goldratt's six questions for technology",
+    "Rule change check"
+   ],
+   "concepts": [
+    "necessary-conditions",
+    "inertia",
+    "policy-constraint"
+   ],
+   "link_to_goal": "Applies The Goal's constraint logic to software: a tool helps only if it removes a limitation and the old rules change too.",
+   "tools": [],
+   "refs": [
+    "bk-necessary-but-not-sufficient"
+   ]
+  },
+  {
+   "id": "isnt-it-obvious",
+   "title": "Isn't It Obvious?",
+   "author": "Eliyahu M. Goldratt, Ilan Eshkoli, Joe Brownleer",
+   "year": 2009,
+   "level": 1,
+   "key_concepts": [
+    "Business novel about a retail chain",
+    "Forecast error is lower at aggregate (central warehouse) than at the store",
+    "Hold stock at the central point; replenish stores often in small amounts",
+    "Replenish to actual consumption (pull), not to forecast",
+    "Dynamic Buffer Management: adjust target levels by buffer color",
+    "Fewer stockouts and less excess inventory at the same time",
+    "Aggregation of variation"
+   ],
+   "concepts": [
+    "replenishment",
+    "buffer-management",
+    "inventory"
+   ],
+   "link_to_goal": "Applies The Goal's buffers and pull to retail distribution: aggregate stock and replenish to consumption.",
+   "tools": [
+    {
+     "tool": "replenishment-sim",
+     "rank": 1,
+     "why": "Replenish to consumption: Each period, order quantity = units consumed since last order; target = max expected demand over reliable replenishment time. | Dynamic Buffer Management (DBM): Split target into thirds. Too long in red -> raise target ~33%; too long in green -> cut ~33%."
+    }
+   ],
+   "refs": [
+    "bk-isnt-it-obvious"
+   ]
+  },
+  {
+   "id": "the-choice",
+   "title": "The Choice",
+   "author": "Eliyahu M. Goldratt, Efrat Goldratt-Ashlag",
+   "year": 2008,
+   "level": 1,
+   "key_concepts": [
+    "Dialogue between Goldratt and his daughter",
+    "Inherent simplicity: more connections in a system means fewer points that control it",
+    "Every conflict can be removed; do not accept compromise",
+    "People are good: look for the logic, not blame",
+    "Never say 'I know'; keep testing",
+    "Clear thinking is a learnable skill",
+    "Inherent simplicity search",
+    "Assume people are good"
+   ],
+   "concepts": [
+    "socratic-method",
+    "policy-constraint",
+    "layers-of-resistance"
+   ],
+   "link_to_goal": "Explains the philosophy behind The Goal: inherent simplicity means few points (constraints) control a complex system.",
+   "tools": [],
+   "refs": [
+    "bk-the-choice"
+   ]
+  },
+  {
+   "id": "the-race",
+   "title": "The Race",
+   "author": "Eliyahu M. Goldratt, Robert E. Fox",
+   "year": 1986,
+   "level": 1,
+   "key_concepts": [
+    "Inventory is a competitive weapon (lead time, quality, engineering)",
+    "Drum-buffer-rope scheduling explained with figures",
+    "Troop march analogy: slowest soldier, rope from front to slowest",
+    "Time buffers protect the constraint, not stock everywhere",
+    "Comparison with JIT/kanban and MRP"
+   ],
+   "concepts": [
+    "drum-buffer-rope",
+    "buffer",
+    "rope",
+    "opt-rules",
+    "batch-size"
+   ],
+   "link_to_goal": "Explains The Goal's DBR and the Herbie hike with figures, and argues low inventory is a competitive edge.",
+   "tools": [
+    {
+     "tool": "dbr-sim",
+     "rank": 1,
+     "why": "Drum-buffer-rope: Drum = constraint schedule; buffer = time of work queued before drum; rope = release material at (drum time - buffer time). | Time buffer sizing: Start buffer ~ 1/2 to 1/3 of current lead time; adjust with buffer penetration data."
+    }
+   ],
+   "refs": [
+    "bk-the-race"
+   ]
+  },
+  {
+   "id": "theory-of-constraints",
+   "title": "Theory of Constraints (What Is This Thing Called Theory of Constraints and How Should It Be Implemented?)",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1990,
+   "level": 1,
+   "key_concepts": [
+    "Five focusing steps defined formally",
+    "Throughput world vs cost world",
+    "Necessary condition and goal",
+    "Thinking Process introduced: Current Reality Tree, Evaporating Cloud",
+    "Effect-cause-effect reasoning",
+    "Measures must link local decisions to the goal"
+   ],
+   "concepts": [
+    "five-focusing-steps",
+    "inertia",
+    "pooi",
+    "thinking-processes"
+   ],
+   "link_to_goal": "Formal short statement of the five focusing steps and the thinking tools Alex uses informally in The Goal.",
+   "tools": [
+    {
+     "tool": "five-steps-checklist",
+     "rank": 1,
+     "why": "Five focusing steps: 1 Identify the constraint. 2 Exploit it. 3 Subordinate all else. 4 Elevate it. 5 If it moves, go to 1; do not let inertia be the constraint."
+    },
+    {
+     "tool": "tp-tree-builder",
+     "rank": 2,
+     "why": "Effect-cause-effect: Hypothesize a cause; predict another effect it must also cause; verify that effect."
+    }
+   ],
+   "refs": [
+    "bk-theory-of-constraints"
+   ]
+  },
+  {
+   "id": "goldratts-rules-of-flow",
+   "title": "Goldratt's Rules of Flow: The Principles of The Goal Applied to Projects",
+   "author": "Efrat Goldratt-Ashlag",
+   "year": 2022,
+   "level": 1,
+   "key_concepts": [
+    "Business novel; applies The Goal's flow rules to projects",
+    "Rule: improve flow is the primary objective",
+    "Rule: limit work released (do not start too early)",
+    "Rule: local efficiency is not the target",
+    "Rule: focus on the few points that block flow",
+    "Full-kit: do not start a task until all inputs are ready",
+    "Remove multitasking; stagger project starts",
+    "Full-kit gate"
+   ],
+   "concepts": [
+    "rope",
+    "buffer-management",
+    "wip-limit",
+    "subordinate"
+   ],
+   "link_to_goal": "Restates The Goal's flow rules for projects: choke release, full-kit, stop multitasking, focus on the flow-blocking resource.",
+   "tools": [
+    {
+     "tool": "dbr-sim",
+     "rank": 1,
+     "why": "Choke release: Release new projects only at the constraint's pace; freeze a share of open projects."
+    },
+    {
+     "tool": "buffer-board",
+     "rank": 2,
+     "why": "Flow priority rule: Priority by buffer consumption, not by who asks loudest."
+    }
+   ],
+   "refs": [
+    "bk-goldratts-rules-of-flow"
+   ]
+  },
+  {
+   "id": "dettmer-logical-thinking-process",
+   "title": "The Logical Thinking Process: A Systems Approach to Complex Problem Solving",
+   "author": "H. William Dettmer",
+   "year": 2007,
+   "level": 1,
+   "key_concepts": [
+    "Practitioner manual for TOC Thinking Process trees",
+    "Intermediate Objectives Map (goal tree) as first step",
+    "Categories of Legitimate Reservation: rules to check logic",
+    "Current Reality Tree, Evaporating Cloud, Future Reality Tree, Prerequisite Tree",
+    "Strategy and policy use, not only production"
+   ],
+   "concepts": [
+    "thinking-processes",
+    "clr",
+    "current-reality-tree",
+    "evaporating-cloud",
+    "prerequisite-tree",
+    "strategy-tactics-tree"
+   ],
+   "link_to_goal": "Practical manual for the Thinking Process tools that answer The Goal's what-to-change questions.",
+   "tools": [
+    {
+     "tool": "tp-tree-builder",
+     "rank": 1,
+     "why": "Intermediate Objectives Map (goal tree): Goal at top; 3-5 critical success factors; necessary conditions below; logic = 'in order to... we must...'. | Prerequisite Tree: Objective -> obstacles -> intermediate objectives that overcome each; order them."
+    },
+    {
+     "tool": "clr-checklist",
+     "rank": 2,
+     "why": "Categories of Legitimate Reservation (CLR): Check clarity, entity existence, causality existence, cause sufficiency, additional cause, cause-effect reversal, predicted effect, tautology."
+    }
+   ],
+   "refs": [
+    "bk-dettmer-logical-thinking-process"
+   ]
+  },
+  {
+   "id": "dettmer-goldratts-toc",
+   "title": "Goldratt's Theory of Constraints: A Systems Approach to Continuous Improvement",
+   "author": "H. William Dettmer",
+   "year": 1997,
+   "level": 1,
+   "key_concepts": [
+    "Systems view of TOC",
+    "Five focusing steps and Thinking Processes as one system",
+    "Five original trees: CRT, EC, FRT, PRT, Transition Tree",
+    "Worked examples and exercises",
+    "Constraint as weakest link in a chain"
+   ],
+   "concepts": [
+    "thinking-processes",
+    "transition-tree",
+    "five-focusing-steps",
+    "policy-constraint"
+   ],
+   "link_to_goal": "Systems explanation of TOC: The Goal's bottleneck as weakest link, plus the five Thinking Process trees.",
+   "tools": [
+    {
+     "tool": "tp-tree-builder",
+     "rank": 1,
+     "why": "Transition Tree: Action + need -> expected effect, in step order, to reach an objective."
+    },
+    {
+     "tool": "five-steps-checklist",
+     "rank": 2,
+     "why": "Chain analogy test: Ask: if I improve this link, does system output change? If no, it is not the constraint."
+    }
+   ],
+   "refs": [
+    "bk-dettmer-goldratts-toc"
+   ]
+  },
+  {
+   "id": "velocity",
+   "title": "Velocity: Combining Lean, Six Sigma and the Theory of Constraints to Achieve Breakthrough Performance",
+   "author": "Dee Jacob, Suzan Bergland, Jeff Cox",
+   "year": 2009,
+   "level": 1,
+   "key_concepts": [
+    "Business novel by co-author of The Goal",
+    "TOC finds where to focus; Lean removes waste; Six Sigma removes variation",
+    "Apply Lean and Six Sigma at the constraint first",
+    "Velocity = speed with direction toward the goal",
+    "Local Lean/Six Sigma projects off the constraint give no system gain"
+   ],
+   "concepts": [
+    "exploit-constraint",
+    "statistical-fluctuations",
+    "five-focusing-steps"
+   ],
+   "link_to_goal": "Combines Lean and Six Sigma under The Goal's focusing: improve at the bottleneck first; other gains are mirages.",
+   "tools": [
+    {
+     "tool": "bottleneck-hour-cost",
+     "rank": 1,
+     "why": "Focus improvement at constraint: Rank improvement projects by delta T at constraint; skip work at non-constraints."
+    },
+    {
+     "tool": "kingman-calc",
+     "rank": 2,
+     "why": "Variation reduction at constraint: Measure variation of the constraint input and cycle time; reduce it first."
+    }
+   ],
+   "refs": [
+    "bk-velocity"
+   ]
+  },
+  {
+   "id": "management-dilemmas",
+   "title": "Management Dilemmas: The Theory of Constraints Approach to Problem Identification and Solutions",
+   "author": "Eli Schragenheim",
+   "year": 1998,
+   "level": 1,
+   "key_concepts": [
+    "Short case stories of managers in dilemmas",
+    "Reader solves first, then reads TOC analysis",
+    "Evaporating Cloud as everyday tool",
+    "Look past details to the core cause",
+    "Measures and policies cause most dilemmas",
+    "Case-first learning"
+   ],
+   "concepts": [
+    "evaporating-cloud",
+    "injection"
+   ],
+   "link_to_goal": "Case drills in Jonah-style reasoning: find the policy or measure that causes a management dilemma, as Alex does.",
+   "tools": [
+    {
+     "tool": "evaporating-cloud-template",
+     "rank": 1,
+     "why": "Evaporating Cloud drill: For each dilemma, write the cloud and three assumptions per arrow before you decide."
+    }
+   ],
+   "refs": [
+    "bk-management-dilemmas"
+   ]
+  },
+  {
+   "id": "supply-chain-warp-speed",
+   "title": "Supply Chain Management at Warp Speed: Integrating the System from End to End",
+   "author": "Eli Schragenheim, H. William Dettmer, J. Wayne Patterson",
+   "year": 2009,
+   "level": 1,
+   "key_concepts": [
+    "Simplified Drum-Buffer-Rope (S-DBR): market is the drum",
+    "Buffer management with green/yellow/red zones",
+    "Planned load on the constraint sets reliable due dates",
+    "Make-to-stock and make-to-order in one system",
+    "Distribution replenishment by consumption"
+   ],
+   "concepts": [
+    "s-dbr",
+    "buffer-management",
+    "market-constraint"
+   ],
+   "link_to_goal": "Simplifies The Goal's DBR into S-DBR with one time buffer and buffer-color priorities across the supply chain.",
+   "tools": [
+    {
+     "tool": "dbr-sim",
+     "rank": 1,
+     "why": "Simplified DBR: Release order at (due date - production buffer). Priority = % buffer consumed."
+    },
+    {
+     "tool": "bottleneck-finder",
+     "rank": 2,
+     "why": "Planned load check: Planned load = sum of constraint work for accepted orders / capacity; quote date = today + planned load + 1/2 buffer."
+    },
+    {
+     "tool": "buffer-board",
+     "rank": 3,
+     "why": "Buffer color priority: Green <33% consumed, yellow 33-67%, red >67%; work red first; >100% = late."
+    }
+   ],
+   "refs": [
+    "bk-supply-chain-warp-speed"
+   ]
+  },
+  {
+   "id": "phoenix-project",
+   "title": "The Phoenix Project",
+   "author": "Gene Kim, Kevin Behr, George Spafford",
+   "year": 2013,
+   "level": 2,
+   "key_concepts": [
+    "Business novel modeled on The Goal, set in IT operations",
+    "Four types of work: business projects, internal projects, changes, unplanned work",
+    "Brent: one expert is the constraint; all work queues on him",
+    "Three Ways: flow, feedback, continual learning",
+    "Unplanned work destroys planned work",
+    "Make work visible with a kanban board; freeze changes",
+    "Wait time = % busy / % idle",
+    "Three Ways"
+   ],
+   "concepts": [
+    "bottleneck",
+    "herbie-hike",
+    "wip-limit",
+    "five-focusing-steps",
+    "exploit-constraint"
+   ],
+   "link_to_goal": "Retells The Goal in IT: Brent is Herbie, Erik is Jonah, unplanned work and WIP replace plant inventory.",
+   "tools": [
+    {
+     "tool": "kanban-board",
+     "rank": 1,
+     "why": "Four types of work: Classify each item: business project, internal project, change, unplanned. Track the unplanned share. | Kanban board with WIP limits: Columns = steps; cards = work; limit cards per column."
+    },
+    {
+     "tool": "bottleneck-hour-cost",
+     "rank": 2,
+     "why": "Protect the constraint (Brent): Route all requests for the constraint through one queue; offload work others can do; document his know-how."
+    },
+    {
+     "tool": "kingman-calc",
+     "rank": 3,
+     "why": "Wait-time rule of thumb: Wait ~ % busy / % idle (50% busy -> 1 unit; 90% -> 9 units; 99% -> 99)."
+    }
+   ],
+   "refs": [
+    "bk-phoenix-project"
+   ]
+  },
+  {
+   "id": "unicorn-project",
+   "title": "The Unicorn Project",
+   "author": "Gene Kim",
+   "year": 2019,
+   "level": 2,
+   "key_concepts": [
+    "Same story as Phoenix from a developer's view",
+    "Five Ideals: locality and simplicity; focus, flow and joy; improvement of daily work; psychological safety; customer focus",
+    "Core vs context work",
+    "Developer productivity depends on fast feedback and low coupling",
+    "Pay down technical debt as improvement of daily work",
+    "Five Ideals check",
+    "Core vs context split"
+   ],
+   "concepts": [
+    "local-efficiency-fallacy",
+    "dependent-events"
+   ],
+   "link_to_goal": "Shows The Goal's step 5: after Phoenix fixes ops, the constraint moves to dev coupling and feedback loops.",
+   "tools": [],
+   "refs": [
+    "bk-unicorn-project"
+   ]
+  },
+  {
+   "id": "principles-of-product-development-flow",
+   "title": "The Principles of Product Development Flow",
+   "author": "Donald G. Reinertsen",
+   "year": 2009,
+   "level": 2,
+   "key_concepts": [
+    "Economic view: quantify cost of delay",
+    "Queues are the main hidden cost in product development",
+    "Variability is not always bad; manage its economic effect",
+    "Reduce batch size",
+    "WIP constraints; control queues not timelines",
+    "Fast feedback; decentralized control with economic rules",
+    "Cadence and synchronization"
+   ],
+   "concepts": [
+    "cost-of-delay",
+    "wip-limit",
+    "batch-size",
+    "kingman-vut",
+    "littles-law"
+   ],
+   "link_to_goal": "Puts The Goal into economic terms for knowledge work: cost of delay, queue control, WIP limits and small batches.",
+   "tools": [
+    {
+     "tool": "wsjf-calc",
+     "rank": 1,
+     "why": "Cost of delay (CoD): CoD = value lost per unit time of delay (e.g. $/week). Quantify it for each item. | WSJF / CD3: Priority = CoD / duration (CD3). Do highest first."
+    },
+    {
+     "tool": "kanban-board",
+     "rank": 2,
+     "why": "WIP constraints: Cap WIP per stage or system; block start when at cap."
+    },
+    {
+     "tool": "flow-metrics-board",
+     "rank": 3,
+     "why": "Queue size control: Monitor queues (not timelines); act when queue passes a limit."
+    },
+    {
+     "tool": "batch-size-sim",
+     "rank": 4,
+     "why": "Batch size reduction: Total cost = transaction cost (falls with batch size) + holding cost (rises); optimum is U-curve flat, so err small."
+    },
+    {
+     "tool": "kingman-calc",
+     "rank": 5,
+     "why": "Kingman-based load rule: Queue time ~ rho/(1-rho); do not load near 100%."
+    }
+   ],
+   "refs": [
+    "bk-principles-of-product-development-flow"
+   ]
+  },
+  {
+   "id": "factory-physics",
+   "title": "Factory Physics",
+   "author": "Wallace J. Hopp, Mark L. Spearman",
+   "year": 1996,
+   "level": 2,
+   "key_concepts": [
+    "Laws of manufacturing behavior from queueing theory",
+    "Little's Law: WIP = TH x CT",
+    "Kingman/VUT: wait = variability x utilization x process time",
+    "Critical WIP W0 = rb x T0",
+    "Best case, worst case, practical worst case performance",
+    "Variability buffering: inventory, capacity or time always pays for variability",
+    "CONWIP pull system",
+    "Variability buffering law"
+   ],
+   "concepts": [
+    "kingman-vut",
+    "littles-law",
+    "statistical-fluctuations",
+    "batch-size",
+    "bottleneck"
+   ],
+   "link_to_goal": "Gives the queueing math behind The Goal: VUT explains fluctuations and idle non-bottlenecks; Little's Law and critical WIP size buffers.",
+   "tools": [
+    {
+     "tool": "kingman-calc",
+     "rank": 1,
+     "why": "Kingman / VUT equation: CTq = ((ca^2 + ce^2)/2) x (u/(1-u)) x te"
+    },
+    {
+     "tool": "littles-law-calc",
+     "rank": 2,
+     "why": "Little's Law: WIP = TH x CT"
+    },
+    {
+     "tool": "critical-wip-calc",
+     "rank": 3,
+     "why": "Critical WIP and best/worst/PWC: W0 = rb x T0; best CT = max(T0, w/rb); worst CT = w x T0; PWC CT = T0 + (w-1)/rb, PWC TH = w/(W0 + w - 1) x rb"
+    },
+    {
+     "tool": "kanban-board",
+     "rank": 4,
+     "why": "CONWIP: Keep total WIP constant: start one only when one finishes."
+    }
+   ],
+   "refs": [
+    "bk-factory-physics"
+   ]
+  },
+  {
+   "id": "littles-law",
+   "title": "Little's Law (chapter in Building Intuition: Insights from Basic Operations Management Models and Principles)",
+   "author": "John D. C. Little, Stephen C. Graves",
+   "year": 2008,
+   "level": 2,
+   "key_concepts": [
+    "L = lambda x W for any stable system",
+    "Holds for averages over long time; no distribution assumptions",
+    "Finite-interval form holds with boundary error",
+    "Know two values, compute the third",
+    "Operations form: WIP = throughput x flow time",
+    "Use to check data consistency"
+   ],
+   "concepts": [
+    "littles-law",
+    "inventory"
+   ],
+   "link_to_goal": "Proves The Goal's inventory claim: at fixed throughput, lead time falls in proportion to WIP.",
+   "tools": [
+    {
+     "tool": "littles-law-calc",
+     "rank": 1,
+     "why": "Little's Law: L = lambda W (WIP = TH x CT). Assumes conservation (arrivals ~= departures over the window). | Data consistency check: Compare measured avg WIP with TH x avg CT over the same window; large gap means bad data or unstable system."
+    }
+   ],
+   "refs": [
+    "bk-littles-law"
+   ]
+  },
+  {
+   "id": "toyota-production-system",
+   "title": "Toyota Production System: Beyond Large-Scale Production",
+   "author": "Taiichi Ohno",
+   "year": 1988,
+   "level": 2,
+   "key_concepts": [
+    "Two pillars: just-in-time and jidoka (automation with a human touch)",
+    "Seven wastes; overproduction is the worst",
+    "Kanban as pull signal and information system",
+    "Ask why five times",
+    "Leveling production (heijunka)",
+    "Standard work",
+    "Small lots and fast setup",
+    "Five whys",
+    "Seven wastes",
+    "Jidoka / stop on defect"
+   ],
+   "concepts": [
+    "wip-limit",
+    "batch-size",
+    "quality-before-bottleneck",
+    "rope"
+   ],
+   "link_to_goal": "Origin of pull and waste ideas that parallel The Goal: overproduction = activation without need; kanban is a distributed rope.",
+   "tools": [
+    {
+     "tool": "kanban-board",
+     "rank": 1,
+     "why": "Kanban pull signal: Make only when a downstream signal (card/slot) is free."
+    }
+   ],
+   "refs": [
+    "bk-toyota-production-system"
+   ]
+  },
+  {
+   "id": "lean-thinking",
+   "title": "Lean Thinking",
+   "author": "James P. Womack, Daniel T. Jones",
+   "year": 1996,
+   "level": 2,
+   "key_concepts": [
+    "Five principles: value, value stream, flow, pull, perfection",
+    "Value defined by the customer",
+    "Muda: activity that uses resources but gives no value",
+    "Flow: single-piece flow instead of batch and queue",
+    "Pull: make only what the customer asks for",
+    "Case studies of lean conversions",
+    "Five lean principles"
+   ],
+   "concepts": [
+    "four-time-elements",
+    "batch-size",
+    "rope"
+   ],
+   "link_to_goal": "Generalizes Toyota ideas into five principles; flow and pull match The Goal's batch and release logic.",
+   "tools": [
+    {
+     "tool": "vsm-template",
+     "rank": 1,
+     "why": "Value-added ratio: VA ratio = value-added time / total lead time."
+    }
+   ],
+   "refs": [
+    "bk-lean-thinking"
+   ]
+  },
+  {
+   "id": "learning-to-see",
+   "title": "Learning to See: Value Stream Mapping to Add Value and Eliminate Muda",
+   "author": "Mike Rother, John Shook",
+   "year": 1998,
+   "level": 2,
+   "key_concepts": [
+    "Value stream map (VSM): material and information flow on one page",
+    "Current state map, future state map, plan",
+    "Takt time sets the pace",
+    "Pacemaker process: one point schedules the stream",
+    "Supermarkets and FIFO lanes between processes",
+    "Timeline: lead time vs processing time"
+   ],
+   "concepts": [
+    "four-time-elements",
+    "littles-law",
+    "batch-size"
+   ],
+   "link_to_goal": "Mapping method that shows where inventory and waiting sit; the pacemaker is The Goal's drum.",
+   "tools": [
+    {
+     "tool": "vsm-template",
+     "rank": 1,
+     "why": "Value stream map: Map steps, inventory triangles, information flow; timeline with lead time vs process time. | Takt time: Takt = available work time / customer demand."
+    },
+    {
+     "tool": "kanban-board",
+     "rank": 2,
+     "why": "FIFO lane with max: Fixed max queue between steps; upstream stops when full."
+    }
+   ],
+   "refs": [
+    "bk-learning-to-see"
+   ]
+  },
+  {
+   "id": "kanban-anderson",
+   "title": "Kanban: Successful Evolutionary Change for Your Technology Business",
+   "author": "David J. Anderson",
+   "year": 2010,
+   "level": 2,
+   "key_concepts": [
+    "Visualize work",
+    "Limit WIP",
+    "Manage flow; measure lead time",
+    "Make policies explicit",
+    "Classes of service (expedite, fixed date, standard, intangible)",
+    "Start with what you do now; evolve",
+    "Began from TOC/DBR experiments at Microsoft and Corbis",
+    "Explicit policies"
+   ],
+   "concepts": [
+    "wip-limit",
+    "rope",
+    "littles-law"
+   ],
+   "link_to_goal": "Software kanban grew from DBR: WIP limits are the rope, classes of service set buffer priority.",
+   "tools": [
+    {
+     "tool": "kanban-board",
+     "rank": 1,
+     "why": "WIP limits per column: Do not pull a card into a column at its limit. | Classes of service: Assign each item a class by cost-of-delay shape; each class has a policy."
+    }
+   ],
+   "refs": [
+    "bk-kanban-anderson"
+   ]
+  },
+  {
+   "id": "fifth-discipline",
+   "title": "The Fifth Discipline: The Art and Practice of the Learning Organization",
+   "author": "Peter M. Senge",
+   "year": 1990,
+   "level": 2,
+   "key_concepts": [
+    "Five disciplines: personal mastery, mental models, shared vision, team learning, systems thinking",
+    "Reinforcing and balancing feedback loops; delays",
+    "System archetypes",
+    "Limits to Growth: growth loop meets a balancing limit",
+    "Shifting the Burden: symptomatic fix weakens fundamental fix",
+    "Beer Game: structure causes behavior",
+    "Small changes at leverage points"
+   ],
+   "concepts": [
+    "inertia",
+    "policy-constraint",
+    "local-efficiency-fallacy"
+   ],
+   "link_to_goal": "Systems thinking for The Goal: Limits to Growth = constraint; Beer Game = matchstick game; Shifting the Burden = expediting habit.",
+   "tools": [
+    {
+     "tool": "causal-loop-template",
+     "rank": 1,
+     "why": "Limits to Growth archetype: Reinforcing growth loop + balancing loop from a limit; rule: do not push growth, remove the limit. | Shifting the Burden archetype: Symptom fix (fast) and fundamental fix (slow); side effect of symptom fix weakens the fundamental fix. | Causal loop diagram: Variables with +/- links; R and B loops; mark delays. | Fixes that Fail / Eroding Goals / Tragedy of the Commons: Other archetypes; check each against a recurring problem."
+    }
+   ],
+   "refs": [
+    "bk-fifth-discipline"
+   ]
+  },
+  {
+   "id": "out-of-the-crisis",
+   "title": "Out of the Crisis",
+   "author": "W. Edwards Deming",
+   "year": 1982,
+   "level": 2,
+   "key_concepts": [
+    "Fourteen points for management",
+    "Common-cause vs special-cause variation",
+    "Most problems come from the system, not the worker",
+    "Tampering: reacting to common-cause noise makes it worse",
+    "Seven deadly diseases (e.g. focus on short-term profit, performance rating)",
+    "PDSA cycle (Shewhart cycle)",
+    "Red Bead experiment (later seminars)",
+    "PDSA cycle",
+    "No tampering rule"
+   ],
+   "concepts": [
+    "statistical-fluctuations",
+    "local-efficiency-fallacy"
+   ],
+   "link_to_goal": "Statistical base for The Goal's fluctuations: tell common from special cause; fix the system, not the worker.",
+   "tools": [
+    {
+     "tool": "control-chart",
+     "rank": 1,
+     "why": "Control chart (XmR / process behavior chart): Center = mean; limits = mean +/- 2.66 x mean moving range. Point outside = special cause."
+    }
+   ],
+   "refs": [
+    "bk-out-of-the-crisis"
+   ]
+  },
+  {
+   "id": "thinking-in-systems",
+   "title": "Thinking in Systems: A Primer",
+   "author": "Donella H. Meadows",
+   "year": 2008,
+   "level": 2,
+   "key_concepts": [
+    "Stocks and flows",
+    "Balancing and reinforcing feedback loops",
+    "Delays cause oscillation",
+    "Bounded rationality",
+    "System traps (policy resistance, drift to low performance, rule beating, seeking the wrong goal)",
+    "Twelve leverage points; goals and paradigms are strongest",
+    "Shifting dominance of loops",
+    "Leverage points list",
+    "System traps check"
+   ],
+   "concepts": [
+    "inertia",
+    "policy-constraint",
+    "inventory"
+   ],
+   "link_to_goal": "Stock-flow language for The Goal: WIP is a stock, the constraint is the limiting factor, wrong measures are a system trap.",
+   "tools": [
+    {
+     "tool": "causal-loop-template",
+     "rank": 1,
+     "why": "Stock-and-flow model: Stock(t+1) = Stock(t) + inflow - outflow."
+    }
+   ],
+   "refs": [
+    "bk-thinking-in-systems"
+   ]
+  },
+  {
+   "id": "devops-handbook",
+   "title": "The DevOps Handbook",
+   "author": "Gene Kim, Jez Humble, Patrick Debois, John Willis",
+   "year": 2016,
+   "level": 2,
+   "key_concepts": [
+    "Practice guide for the Three Ways",
+    "Deployment pipeline and continuous delivery",
+    "Small batches; trunk-based development",
+    "Telemetry; fast feedback",
+    "Value stream mapping for technology",
+    "Blameless post-mortems; learning culture",
+    "Find and elevate constraints in the delivery pipeline",
+    "Deployment pipeline",
+    "Blameless post-mortem"
+   ],
+   "concepts": [
+    "five-focusing-steps",
+    "bottleneck",
+    "batch-size",
+    "wip-limit"
+   ],
+   "link_to_goal": "Practice manual for The Goal ideas in software delivery: find the pipeline constraint, cut batch size, add fast feedback.",
+   "tools": [
+    {
+     "tool": "five-steps-checklist",
+     "rank": 1,
+     "why": "Typical constraint progression: Environment creation -> code deployment -> test setup and run -> overly tight architecture -> product development."
+    }
+   ],
+   "refs": [
+    "bk-devops-handbook"
+   ]
+  },
+  {
+   "id": "accelerate",
+   "title": "Accelerate: The Science of Lean Software and DevOps",
+   "author": "Nicole Forsgren, Jez Humble, Gene Kim",
+   "year": 2018,
+   "level": 2,
+   "key_concepts": [
+    "Four key metrics: deployment frequency, lead time for changes, change failure rate, time to restore",
+    "Speed and stability are not a trade-off",
+    "24 capabilities drive performance",
+    "Survey-based research (State of DevOps)",
+    "Westrum organizational culture",
+    "Lean management and WIP limits predict performance",
+    "Four key metrics (DORA)",
+    "Capability assessment"
+   ],
+   "concepts": [
+    "global-measures",
+    "batch-size"
+   ],
+   "link_to_goal": "Gives software a measured version of The Goal's global metrics: four key metrics replace local productivity measures.",
+   "tools": [],
+   "refs": [
+    "bk-accelerate"
+   ]
+  },
+  {
+   "id": "actionable-agile-metrics",
+   "title": "Actionable Agile Metrics for Predictability",
+   "author": "Daniel S. Vacanti",
+   "year": 2015,
+   "level": 2,
+   "key_concepts": [
+    "Flow metrics: WIP, cycle time, throughput, work item age",
+    "Little's Law assumptions and how to keep them",
+    "Cumulative flow diagram (CFD)",
+    "Cycle time scatterplot with percentile lines",
+    "Monte Carlo forecasting from throughput history",
+    "Service level expectation (SLE)",
+    "Pull policy: finish before start"
+   ],
+   "concepts": [
+    "littles-law",
+    "wip-limit",
+    "statistical-fluctuations"
+   ],
+   "link_to_goal": "Measures The Goal's flow in knowledge work: CFD shows WIP and lead time, Monte Carlo replaces single-point plans.",
+   "tools": [
+    {
+     "tool": "flow-metrics-board",
+     "rank": 1,
+     "why": "Cumulative flow diagram: Stacked count of items that have entered each state over time; vertical gap = WIP; horizontal gap = approx cycle time; top slope = arrival rate; bottom slope = throughput. | Cycle time scatterplot: Dot per finished item (date, cycle time); draw 50/85/95th percentile lines. | Work item age: Age = today - start; compare with SLE percentile."
+    },
+    {
+     "tool": "monte-carlo-forecast",
+     "rank": 2,
+     "why": "Monte Carlo forecast: Sample daily throughput history N times to make a distribution of 'how many by date' or 'when for N items'; report 85th percentile."
+    },
+    {
+     "tool": "littles-law-calc",
+     "rank": 3,
+     "why": "Little's Law assumptions: Arrivals ~= departures; all started items finish; WIP age stable; consistent units."
+    }
+   ],
+   "refs": [
+    "bk-actionable-agile-metrics"
+   ]
+  }
+ ]
+}

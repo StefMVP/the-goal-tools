@@ -1,0 +1,68 @@
+{
+ "id": "pq-product-mix",
+ "title": "P&Q: product mix by T per constraint minute",
+ "kind": "flow",
+ "concepts": [
+  "product-mix-pq",
+  "throughput-accounting",
+  "exploit-constraint"
+ ],
+ "chapters": [],
+ "nodes": [
+  {
+   "id": "P",
+   "label": "P: price 90, TVC 45, T 45, demand 100/wk, 15 min on B",
+   "type": "product"
+  },
+  {
+   "id": "Q",
+   "label": "Q: price 100, TVC 40, T 60, demand 50/wk, 30 min on B",
+   "type": "product"
+  },
+  {
+   "id": "B",
+   "label": "Resource B: 2400 min/wk; load 3000 min (constraint)",
+   "type": "constraint"
+  },
+  {
+   "id": "toc",
+   "label": "TOC mix: 100 P + 30 Q; T 6300; NP 300",
+   "type": "result"
+  },
+  {
+   "id": "cost",
+   "label": "Margin mix: 50 Q + 60 P; T 5700; NP -300",
+   "type": "result"
+  }
+ ],
+ "edges": [
+  {
+   "from": "P",
+   "to": "B",
+   "label": "T/B-min = 3"
+  },
+  {
+   "from": "Q",
+   "to": "B",
+   "label": "T/B-min = 2"
+  },
+  {
+   "from": "B",
+   "to": "toc",
+   "label": "rank by T/B-min"
+  },
+  {
+   "from": "B",
+   "to": "cost",
+   "label": "rank by margin"
+  }
+ ],
+ "notes": [
+  "OE 6000/wk. Numbers checked in two sources."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-haystack-syndrome",
+  "web-dbrmfg-pq"
+ ]
+}

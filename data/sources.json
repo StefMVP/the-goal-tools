@@ -1,0 +1,1554 @@
+{
+ "sources": [
+  {
+   "id": "bk-accelerate",
+   "title": "Accelerate: The Science of Lean Software and DevOps",
+   "author": "Nicole Forsgren, Jez Humble, Gene Kim",
+   "year": 2018,
+   "url": "https://itrevolution.com/product/accelerate/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Empirical metrics; DORA four keys."
+  },
+  {
+   "id": "bk-actionable-agile-metrics",
+   "title": "Actionable Agile Metrics for Predictability",
+   "author": "Daniel S. Vacanti",
+   "year": 2015,
+   "url": "https://leanpub.com/actionableagilemetrics",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Flow metrics; CFD; Monte Carlo."
+  },
+  {
+   "id": "bk-corbett-ta",
+   "title": "Throughput Accounting",
+   "author": "Thomas Corbett",
+   "year": 1998,
+   "url": "https://openlibrary.org/works/OL7351980W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "T, I, OE decision rules; product-mix by T/CU; NP and ROI formulas."
+  },
+  {
+   "id": "bk-critical-chain",
+   "title": "Critical Chain",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1997,
+   "url": "https://openlibrary.org/works/OL8384933W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "CCPM origin: 50% estimates, project and feeding buffers, student syndrome, Parkinson's law, multitasking."
+  },
+  {
+   "id": "bk-dettmer-goldratts-toc",
+   "title": "Goldratt's Theory of Constraints: A Systems Approach to Continuous Improvement",
+   "author": "H. William Dettmer",
+   "year": 1997,
+   "url": "https://openlibrary.org/works/OL1827619W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Step-by-step manual for the five thinking-process trees with worked examples."
+  },
+  {
+   "id": "bk-dettmer-logical-thinking-process",
+   "title": "The Logical Thinking Process: A Systems Approach to Complex Problem Solving",
+   "author": "H. William Dettmer",
+   "year": 2007,
+   "url": "https://openlibrary.org/works/OL1827621W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Rigorous thinking-process rules: categories of legitimate reservation, goal tree, CRT, EC, FRT, PRT."
+  },
+  {
+   "id": "bk-devops-handbook",
+   "title": "The DevOps Handbook",
+   "author": "Gene Kim, Jez Humble, Patrick Debois, John Willis",
+   "year": 2016,
+   "url": "https://itrevolution.com/product/the-devops-handbook-second-edition/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Three Ways in practice; constraint progression."
+  },
+  {
+   "id": "bk-factory-physics",
+   "title": "Factory Physics",
+   "author": "Wallace J. Hopp; Mark L. Spearman",
+   "year": 1996,
+   "url": "https://openlibrary.org/works/OL547479W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Queueing laws for lines: Little's law, Kingman VUT, bottleneck rate, critical WIP, CONWIP."
+  },
+  {
+   "id": "bk-fifth-discipline",
+   "title": "The Fifth Discipline: The Art and Practice of the Learning Organization",
+   "author": "Peter M. Senge",
+   "year": 1990,
+   "url": "https://openlibrary.org/search?q=The+Fifth+Discipline+Senge",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Archetypes; Beer Game."
+  },
+  {
+   "id": "bk-goldratts-rules-of-flow",
+   "title": "Goldratt's Rules of Flow: The Principles of The Goal Applied to Projects",
+   "author": "Efrat Goldratt-Ashlag",
+   "year": 2022,
+   "url": "https://www.routledge.com/Goldratts-Rules-of-Flow/Goldratt-Ashlag/p/book/9781032578729",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Flow rules for projects; full-kit."
+  },
+  {
+   "id": "bk-haystack-syndrome",
+   "title": "The Haystack Syndrome: Sifting Information out of the Data Ocean",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1990,
+   "url": "https://openlibrary.org/works/OL4455381W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "P&Q product-mix problem; T per constraint unit; DBR information system design."
+  },
+  {
+   "id": "bk-isnt-it-obvious",
+   "title": "Isn't It Obvious?",
+   "author": "Eliyahu M. Goldratt; Ilan Eshkoli; Joe Brownleer",
+   "year": 2009,
+   "url": "https://openlibrary.org/works/OL30910336W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Retail replenishment by story: central warehouse pull, frequent small resupply, dynamic buffer management."
+  },
+  {
+   "id": "bk-its-not-luck",
+   "title": "It's Not Luck",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1994,
+   "url": "https://openlibrary.org/works/OL2463053W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Thinking processes (CRT, EC, FRT, PRT, TrT) by story. Marketing and distribution constraints."
+  },
+  {
+   "id": "bk-kanban-anderson",
+   "title": "Kanban: Successful Evolutionary Change for Your Technology Business",
+   "author": "David J. Anderson",
+   "year": 2010,
+   "url": "https://openlibrary.org/search?q=Kanban+Successful+Evolutionary+Change+Anderson",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Kanban method for knowledge work; link from DBR."
+  },
+  {
+   "id": "bk-lean-thinking",
+   "title": "Lean Thinking",
+   "author": "James P. Womack, Daniel T. Jones",
+   "year": 1996,
+   "url": "https://openlibrary.org/search?q=Lean+Thinking+Womack+Jones",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Five lean principles."
+  },
+  {
+   "id": "bk-learning-to-see",
+   "title": "Learning to See: Value Stream Mapping to Add Value and Eliminate Muda",
+   "author": "Mike Rother, John Shook",
+   "year": 1998,
+   "url": "https://www.lean.org/store/book/learning-to-see/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "VSM method."
+  },
+  {
+   "id": "bk-littles-law",
+   "title": "Little's Law (chapter in Building Intuition: Insights from Basic Operations Management Models and Principles)",
+   "author": "John D. C. Little, Stephen C. Graves",
+   "year": 2008,
+   "url": "https://link.springer.com/doi/10.1007/978-0-387-73699-0_5",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Clear modern exposition of L = lambda W and its conditions."
+  },
+  {
+   "id": "bk-mabin-world-of-toc",
+   "title": "The World of the Theory of Constraints: A Review of the International Literature",
+   "author": "Victoria J. Mabin; Steven J. Balderstone",
+   "year": 2000,
+   "url": "https://doi.org/10.4324/9780429273056",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Annotated literature review; table of reported TOC application results."
+  },
+  {
+   "id": "bk-management-dilemmas",
+   "title": "Management Dilemmas: The Theory of Constraints Approach to Problem Identification and Solutions",
+   "author": "Eli Schragenheim",
+   "year": 1998,
+   "url": "https://www.routledge.com/Management-Dilemmas-The-Theory-of-Constraints-Approach-to-Problem-Identification-and-Solutions/Schragenheim/p/book/9781574442229",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Case drills for TOC thinking."
+  },
+  {
+   "id": "bk-necessary-but-not-sufficient",
+   "title": "Necessary But Not Sufficient",
+   "author": "Eliyahu M. Goldratt; Eli Schragenheim; Carol A. Ptak",
+   "year": 2000,
+   "url": "https://openlibrary.org/works/OL14987483W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "ERP and TOC; software alone does not remove a constraint without new rules."
+  },
+  {
+   "id": "bk-noreen-toc-accounting",
+   "title": "The Theory of Constraints and Its Implications for Management Accounting",
+   "author": "Eric Noreen; Debra Smith; James T. Mackey",
+   "year": 1995,
+   "url": "https://openlibrary.org/works/OL2392270W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Field study of TOC firms; TA vs cost accounting; buffer management practice."
+  },
+  {
+   "id": "bk-out-of-the-crisis",
+   "title": "Out of the Crisis",
+   "author": "W. Edwards Deming",
+   "year": 1982,
+   "url": "https://openlibrary.org/search?q=Out+of+the+Crisis+Deming",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Variation theory; PDSA; 14 points. First 1982; widely cited MIT CAES edition 1986."
+  },
+  {
+   "id": "bk-phoenix-project",
+   "title": "The Phoenix Project",
+   "author": "Gene Kim, Kevin Behr, George Spafford",
+   "year": 2013,
+   "url": "https://itrevolution.com/product/the-phoenix-project/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "TOC novel for IT; four work types; wait-time rule."
+  },
+  {
+   "id": "bk-principles-of-product-development-flow",
+   "title": "The Principles of Product Development Flow",
+   "author": "Donald G. Reinertsen",
+   "year": 2009,
+   "url": "https://openlibrary.org/search?q=Principles+of+Product+Development+Flow+Reinertsen",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Economic flow model; CoD, WSJF, queues."
+  },
+  {
+   "id": "bk-supply-chain-warp-speed",
+   "title": "Manufacturing at Warp Speed",
+   "author": "Eli Schragenheim; H. William Dettmer",
+   "year": 2000,
+   "url": "https://openlibrary.org/works/OL1967829W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Introduces simplified DBR: market as constraint, one shipping buffer, buffer management."
+  },
+  {
+   "id": "bk-the-choice",
+   "title": "The Choice",
+   "author": "Eliyahu M. Goldratt; Efrat Goldratt-Ashlag",
+   "year": 2008,
+   "url": "https://openlibrary.org/works/OL26149341W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Philosophy behind TOC: inherent simplicity, harmony, win-win conflict resolution."
+  },
+  {
+   "id": "bk-the-goal",
+   "title": "The Goal: A Process of Ongoing Improvement",
+   "author": "Eliyahu M. Goldratt; Jeff Cox",
+   "year": 1984,
+   "url": "https://openlibrary.org/works/OL2463051W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Core text. Herbie hike, matchstick and dice game, T/I/OE measures, five focusing steps by example."
+  },
+  {
+   "id": "bk-the-race",
+   "title": "The Race",
+   "author": "Eliyahu M. Goldratt; Robert E. Fox",
+   "year": 1986,
+   "url": "https://openlibrary.org/works/OL2463052W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Origin of drum-buffer-rope; inventory as competitive weapon; illustrated troop march analogy."
+  },
+  {
+   "id": "bk-theory-of-constraints",
+   "title": "Theory of Constraints",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1990,
+   "url": "https://openlibrary.org/works/OL8384929W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Short formal statement of five focusing steps and the thinking-process questions: what to change, to what, how."
+  },
+  {
+   "id": "bk-thinking-in-systems",
+   "title": "Thinking in Systems: A Primer",
+   "author": "Donella H. Meadows",
+   "year": 2008,
+   "url": "https://www.chelseagreen.com/product/thinking-in-systems/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Stocks/flows; leverage points; traps."
+  },
+  {
+   "id": "bk-toc-handbook",
+   "title": "Theory of Constraints Handbook",
+   "author": "James F. Cox III; John G. Schleier Jr. (eds.)",
+   "year": 2010,
+   "url": "https://openlibrary.org/works/OL18346923W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Reference: chapters on DBR, S-DBR, CCPM, replenishment, TA, thinking processes by main authors."
+  },
+  {
+   "id": "bk-toyota-production-system",
+   "title": "Toyota Production System: Beyond Large-Scale Production",
+   "author": "Taiichi Ohno",
+   "year": 1988,
+   "url": "https://openlibrary.org/search?q=Toyota+Production+System+Ohno",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Primary source for TPS; Japanese edition 1978, English 1988."
+  },
+  {
+   "id": "bk-unicorn-project",
+   "title": "The Unicorn Project",
+   "author": "Gene Kim",
+   "year": 2019,
+   "url": "https://itrevolution.com/product/the-unicorn-project/",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Five Ideals; dev-side constraints."
+  },
+  {
+   "id": "bk-velocity",
+   "title": "Velocity: Combining Lean, Six Sigma and the Theory of Constraints to Achieve Breakthrough Performance",
+   "author": "Dee Jacob, Suzan Bergland, Jeff Cox",
+   "year": 2009,
+   "url": "https://www.simonandschuster.com/books/Velocity/Dee-Jacob/9781439158937",
+   "type": "book",
+   "license": "copyright",
+   "adds": "TOC + Lean + Six Sigma integration."
+  },
+  {
+   "id": "bk-what-is-toc",
+   "title": "What Is This Thing Called Theory of Constraints and How Should It Be Implemented?",
+   "author": "Eliyahu M. Goldratt",
+   "year": 1990,
+   "url": "https://openlibrary.org/works/OL4186015W",
+   "type": "book",
+   "license": "copyright",
+   "adds": "Five focusing steps, cost world vs throughput world, Socratic method for change."
+  },
+  {
+   "id": "chapter-little-graves-2008-pdf",
+   "title": "Little's Law (author copy)",
+   "author": "John D. C. Little, Stephen C. Graves",
+   "year": 2008,
+   "url": "https://www.ic.unicamp.br/~nfonseca/MO648/doc/Little%27s%20Law-Published.pdf",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Readable copy of the 2008 chapter."
+  },
+  {
+   "id": "img-crt",
+   "title": "Current Reality Tree Example",
+   "author": "Trevithj",
+   "year": 2008,
+   "url": "https://commons.wikimedia.org/wiki/File:CurrentRealityTree_Example.png",
+   "type": "image",
+   "license": "CC-BY-SA-3.0",
+   "adds": "CRT with car-problem UDEs. Attribution: Trevithj, CC BY-SA 3.0."
+  },
+  {
+   "id": "img-dbr",
+   "title": "DBR Tambour Tampon Corde (Drum Buffer Rope)",
+   "author": "Philip Marris",
+   "year": 2011,
+   "url": "https://commons.wikimedia.org/wiki/File:DBR_Tambour_Tampon_Corde_en_JPEG_20110830.jpg",
+   "type": "image",
+   "license": "CC-BY-SA-3.0",
+   "adds": "DBR schematic. Attribution: Philip Marris, CC BY-SA 3.0, Wikimedia Commons."
+  },
+  {
+   "id": "img-dbr-v2",
+   "title": "DBR Tambour Tampon Corde V2",
+   "author": "Philip Marris",
+   "year": 2011,
+   "url": "https://commons.wikimedia.org/wiki/File:DBR_Tambour_Tampon_Corde_en_JPEG_V2_20110830.jpg",
+   "type": "image",
+   "license": "CC-BY-SA-3.0",
+   "adds": "Second DBR schematic version. Attribution: Philip Marris, CC BY-SA 3.0."
+  },
+  {
+   "id": "img-evaporating-cloud",
+   "title": "Evaporating Cloud - Overview",
+   "author": "Trevithj",
+   "year": 2013,
+   "url": "https://commons.wikimedia.org/wiki/File:Evaporating_Cloud_-_Overview.svg",
+   "type": "image",
+   "license": "CC-BY-SA-3.0",
+   "adds": "Generic EC structure, SVG. Attribution: Trevithj, CC BY-SA 3.0, Wikimedia Commons."
+  },
+  {
+   "id": "img-evaporating-cloud-example",
+   "title": "Evaporating Cloud Example (batch size)",
+   "author": "Trevithj",
+   "year": 2008,
+   "url": "https://commons.wikimedia.org/wiki/File:Evaporating_Cloud_Example.PNG",
+   "type": "image",
+   "license": "CC-BY-SA-3.0",
+   "adds": "EC for batch-size dilemma from The Haystack Syndrome. Attribution: Trevithj, CC BY-SA 3.0."
+  },
+  {
+   "id": "img-evaporating-cloud-pt",
+   "title": "EvaporacaoDeNuvem",
+   "author": "Adail Retamal",
+   "year": 2008,
+   "url": "https://commons.wikimedia.org/wiki/File:EvaporacaoDeNuvem.png",
+   "type": "image",
+   "license": "public-domain",
+   "adds": "Portuguese EC diagram, public domain."
+  },
+  {
+   "id": "img-goldratt-armstrong",
+   "title": "Goldratt and Armstrong, Paris 2008",
+   "author": "Francois-Xavier Dugres",
+   "year": 2008,
+   "url": "https://commons.wikimedia.org/wiki/File:Goldratt%2BAmstrong.jpg",
+   "type": "image",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Open photo of Goldratt."
+  },
+  {
+   "id": "img-kanban-board",
+   "title": "Abstract Kanban Board",
+   "author": "Jennifer Falco",
+   "year": 2023,
+   "url": "https://commons.wikimedia.org/wiki/File:Abstract_Kanban_Board.svg",
+   "type": "image",
+   "license": "CC-BY-4.0",
+   "adds": "Generic kanban board SVG for flow comparison."
+  },
+  {
+   "id": "img-student-syndrome",
+   "title": "Studentensyndrom",
+   "author": "Wolfgang Kowarschick",
+   "year": 2006,
+   "url": "https://commons.wikimedia.org/wiki/File:Studentensyndrom.svg",
+   "type": "image",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Student syndrome effort curve (German labels). Use for CCPM safety-time waste."
+  },
+  {
+   "id": "img-the-goal-cover",
+   "title": "The Goal book cover",
+   "author": "North River Press",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/File:The-goal-bookcover.jpg",
+   "type": "image",
+   "license": "copyright",
+   "adds": "Link only. Non-free cover."
+  },
+  {
+   "id": "img-throughput-structure",
+   "title": "ThroughputStructure",
+   "author": "TAUser",
+   "year": 2008,
+   "url": "https://commons.wikimedia.org/wiki/File:ThroughputStructure.jpg",
+   "type": "image",
+   "license": "CC-BY-3.0",
+   "adds": "Throughput accounting structure chart. Attribution: TAUser, CC BY 3.0."
+  },
+  {
+   "id": "org-goal-systems",
+   "title": "Goal Systems International",
+   "author": "H. William Dettmer",
+   "year": null,
+   "url": "https://www.goalsys.com/",
+   "type": "org",
+   "license": "copyright",
+   "adds": "Dettmer site. Old S-DBR paper URL returns HTML, not PDF."
+  },
+  {
+   "id": "org-goldratt-group",
+   "title": "Goldratt Group",
+   "author": "Goldratt Group",
+   "year": null,
+   "url": "https://goldrattgroup.com/",
+   "type": "org",
+   "license": "copyright",
+   "adds": "Current Goldratt firm site; goldratt.com (AGI) redirects here. goldrattconsulting.com did not resolve."
+  },
+  {
+   "id": "org-goldratt-research-labs",
+   "title": "Goldratt Research Labs",
+   "author": "Alan Barnard",
+   "year": null,
+   "url": "https://www.goldrattresearchlabs.com/",
+   "type": "org",
+   "license": "copyright",
+   "adds": "TOC research body founded 2007 by Alan Barnard; simulators and research."
+  },
+  {
+   "id": "org-tocico",
+   "title": "TOCICO - Theory of Constraints International Certification Organization",
+   "author": "TOCICO",
+   "year": null,
+   "url": "https://www.tocico.org/",
+   "type": "org",
+   "license": "copyright",
+   "adds": "Certification body; conference talks; body of knowledge."
+  },
+  {
+   "id": "pap-blackstone-2001",
+   "title": "Theory of constraints - a status report",
+   "author": "John H. Blackstone",
+   "year": 2001,
+   "url": "https://doi.org/10.1080/00207540010028119",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Status of DBR, TA, CCPM, thinking-process research around 2000."
+  },
+  {
+   "id": "pap-blackstone-2010",
+   "title": "Theory of Constraints (Scholarpedia)",
+   "author": "John H. Blackstone",
+   "year": 2010,
+   "url": "http://www.scholarpedia.org/article/Theory_of_Constraints",
+   "type": "paper",
+   "license": "CC-BY-NC-SA-3.0",
+   "adds": "Peer-reviewed open encyclopedia entry; NC license limits commercial reuse."
+  },
+  {
+   "id": "pap-costas-2015",
+   "title": "Applying Goldratt's Theory of Constraints to reduce the Bullwhip Effect through agent-based modeling",
+   "author": "José Costas; Borja Ponte; David de la Fuente; Raúl Pino; Julio Puche",
+   "year": 2015,
+   "url": "https://doi.org/10.1016/j.eswa.2014.10.022",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Beer-game style supply chain with DBR rules; bullwhip reduction."
+  },
+  {
+   "id": "pap-fredendall-1997",
+   "title": "Improving the product mix heuristic in the theory of constraints",
+   "author": "Lawrence D. Fredendall; Brian R. Lea",
+   "year": 1997,
+   "url": "https://doi.org/10.1080/002075497195100",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Shows T/CU heuristic fails with several constraints; improved heuristic."
+  },
+  {
+   "id": "pap-gupta-2008",
+   "title": "Theory of constraints: a theory for operations management",
+   "author": "Mahesh C. Gupta; Lynn H. Boyd",
+   "year": 2008,
+   "url": "https://doi.org/10.1108/01443570810903122",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Argues TOC as general OM theory."
+  },
+  {
+   "id": "pap-herroelen-2001",
+   "title": "On the merits and pitfalls of critical chain scheduling",
+   "author": "Willy Herroelen; Roel Leus",
+   "year": 2001,
+   "url": "https://doi.org/10.1016/s0272-6963(01)00054-7",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Critique and simulation of CC scheduling assumptions."
+  },
+  {
+   "id": "pap-hilmola-2006",
+   "title": "Using Goldratt's dice-game to introduce system dynamics models and simulation",
+   "author": "Olli-Pekka Hilmola",
+   "year": 2006,
+   "url": "https://doi.org/10.1504/ijiome.2006.010493",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Dice game as system dynamics model."
+  },
+  {
+   "id": "pap-hopp-2004",
+   "title": "To Pull or Not to Pull: What Is the Question?",
+   "author": "Wallace J. Hopp; Mark L. Spearman",
+   "year": 2004,
+   "url": "https://doi.org/10.1287/msom.1030.0028",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Defines pull as WIP cap; frames kanban, CONWIP, DBR."
+  },
+  {
+   "id": "pap-ikeziri-2019",
+   "title": "Theory of constraints: review and bibliometric analysis",
+   "author": "Lucas M. Ikeziri; Fernando B. de Souza; Mahesh C. Gupta; Paula de Camargo Fiorini",
+   "year": 2019,
+   "url": "https://doi.org/10.1080/00207543.2018.1518602",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Recent bibliometric review; maps TOC research streams."
+  },
+  {
+   "id": "pap-jodlbauer-2008",
+   "title": "Service-level performance of MRP, kanban, CONWIP and DBR due to parameter stability and environmental robustness",
+   "author": "Herbert Jodlbauer; Alexander Huber",
+   "year": 2008,
+   "url": "https://doi.org/10.1080/00207540600609297",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Simulation compares four control systems for robustness to parameter error."
+  },
+  {
+   "id": "pap-johnson-2002",
+   "title": "Using Goldratt's Game to Introduce Simulation in the Introductory Operations Management Course",
+   "author": "Arvid C. Johnson; Anne M. Drougas",
+   "year": 2002,
+   "url": "https://doi.org/10.1287/ited.3.1.20",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Dice game as spreadsheet simulation exercise."
+  },
+  {
+   "id": "pap-kim-2008",
+   "title": "The theory of constraints thinking processes: retrospect and prospect",
+   "author": "Seonmin Kim; Victoria J. Mabin; John Davies",
+   "year": 2008,
+   "url": "https://doi.org/10.1108/01443570810846883",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Review of thinking-process literature and use."
+  },
+  {
+   "id": "pap-lambrecht-2012",
+   "title": "Extending the production dice game",
+   "author": "M. Lambrecht; S. Creemers; R. Boute; R. Leus",
+   "year": 2012,
+   "url": "https://doi.org/10.1108/01443571211284197",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Dice game extended with queueing view: variability, utilization, WIP and lead time."
+  },
+  {
+   "id": "pap-leach-1999",
+   "title": "Critical Chain Project Management Improves Project Performance",
+   "author": "Larry P. Leach",
+   "year": 1999,
+   "url": "https://doi.org/10.1177/875697289903000207",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "CCPM summary for PMI; buffer sizing; links to TOC."
+  },
+  {
+   "id": "pap-linhares-2009",
+   "title": "Theory of constraints and the combinatorial complexity of the product-mix decision",
+   "author": "Alexandre Linhares",
+   "year": 2009,
+   "url": "https://doi.org/10.1016/j.ijpe.2009.04.023",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Product mix is NP-hard; TOC heuristic not optimal in general."
+  },
+  {
+   "id": "pap-little-1961",
+   "title": "A Proof for the Queuing Formula: L = λW",
+   "author": "John D. C. Little",
+   "year": 1961,
+   "url": "https://doi.org/10.1287/opre.9.3.383",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Original proof of Little's law; WIP = throughput × flow time."
+  },
+  {
+   "id": "pap-luebbe-1992",
+   "title": "Theory of constraints and linear programming: a comparison",
+   "author": "Richard Luebbe; Byron Finch",
+   "year": 1992,
+   "url": "https://doi.org/10.1080/00207549208942967",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Product mix: TOC T/CU heuristic vs LP."
+  },
+  {
+   "id": "pap-luo-2022",
+   "title": "Game—Playing Goldratt's Dice Game in Large Classes",
+   "author": "Lan Luo; Charles L. Munson",
+   "year": 2022,
+   "url": "https://doi.org/10.1287/ited.2021.0267",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Excel dice game for large classes; numerical analysis of options; learning effect data."
+  },
+  {
+   "id": "pap-mabin-2003",
+   "title": "The performance of the theory of constraints methodology: analysis and discussion of successful TOC applications",
+   "author": "Victoria J. Mabin; Steven J. Balderstone",
+   "year": 2003,
+   "url": "https://doi.org/10.1108/01443570310476636",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Meta-analysis of more than 80 cases; mean gains in lead time, due date, inventory, revenue."
+  },
+  {
+   "id": "pap-puche-2019",
+   "title": "The effect of supply chain noise on the financial performance of Kanban and Drum-Buffer-Rope",
+   "author": "Julio Puche; José Costas; Borja Ponte; Raúl Pino; David de la Fuente",
+   "year": 2019,
+   "url": "https://doi.org/10.1016/j.eswa.2018.11.009",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Agent-based Kanban vs DBR under demand and lead-time noise."
+  },
+  {
+   "id": "pap-radovilsky-1998",
+   "title": "A quantitative approach to estimate the size of the time buffer in the theory of constraints",
+   "author": "Zinovy D. Radovilsky",
+   "year": 1998,
+   "url": "https://doi.org/10.1016/s0925-5273(97)00131-x",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Queueing model to size constraint time buffer."
+  },
+  {
+   "id": "pap-rahman-1998",
+   "title": "Theory of constraints: a review of the philosophy and its applications",
+   "author": "Shams-ur Rahman",
+   "year": 1998,
+   "url": "https://doi.org/10.1108/01443579810199720",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Early TOC review: five steps, DBR, TA, thinking processes, literature list."
+  },
+  {
+   "id": "pap-rays-2023",
+   "title": "Analysis of a support method for offering delivery promises in environments managed by S-DBR system",
+   "author": "Isidoro Rays Filho; Fernando B. de Souza; Lucas M. Ikeziri",
+   "year": 2023,
+   "url": "https://doi.org/10.1590/0103-6513.20230023",
+   "type": "paper",
+   "license": "CC-BY-4.0",
+   "adds": "Open S-DBR text: production buffer, planned load, promise = planned load + half buffer, release rule."
+  },
+  {
+   "id": "pap-raz-2003",
+   "title": "A Critical Look at Critical Chain Project Management",
+   "author": "Tzvi Raz; Robert Barnes; Dov Dvir",
+   "year": 2003,
+   "url": "https://doi.org/10.1177/875697280303400404",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Critical review of CCPM claims and evidence."
+  },
+  {
+   "id": "pap-ronen-1990",
+   "title": "Synchronized manufacturing as in OPT: from practice to theory",
+   "author": "Boaz Ronen; Martin K. Starr",
+   "year": 1990,
+   "url": "https://doi.org/10.1016/0360-8352(90)90017-g",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "OPT rules formalized; bottleneck and non-bottleneck rules."
+  },
+  {
+   "id": "pap-schragenheim-2007",
+   "title": "Drum Buffer Rope and Buffer Management in a Make-to-Stock Environment",
+   "author": "Eli Schragenheim; Rudi Burkhard",
+   "year": 2007,
+   "url": "https://www.scienceofbusiness.com/files/2007%20March%20Drum%20Buffer%20Rope%20and%20Buffer%20Management%20in%20a%20Make-to-Stock%20Environment%20by%20Scharagenheim%20&%20Burkhard.pdf",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "States Goldratt target-level rules: red penetration over replenishment time gives +33%; full cycle in green gives -33%."
+  },
+  {
+   "id": "pap-spearman-1990",
+   "title": "CONWIP: a pull alternative to kanban",
+   "author": "Mark L. Spearman; David L. Woodruff; Wallace J. Hopp",
+   "year": 1990,
+   "url": "https://doi.org/10.1080/00207549008942761",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Constant-WIP release; close relative of DBR rope."
+  },
+  {
+   "id": "pap-steele-2005",
+   "title": "Comparisons between drum-buffer-rope and material requirements planning: a case study",
+   "author": "Daniel C. Steele; Patrick R. Philipoom; Manoj K. Malhotra; Timothy D. Fry",
+   "year": 2005,
+   "url": "https://doi.org/10.1080/00207540500076704",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Case-based simulation: DBR beats nominal MRP; DBR-style rules improve MRP."
+  },
+  {
+   "id": "pap-sterman-1989",
+   "title": "Modeling Managerial Behavior: Misperceptions of Feedback in a Dynamic Decision Making Experiment",
+   "author": "John D. Sterman",
+   "year": 1989,
+   "url": "https://doi.org/10.1287/mnsc.35.3.321",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Beer game reference model and ordering heuristic."
+  },
+  {
+   "id": "pap-steyn-2001",
+   "title": "An investigation into the fundamentals of critical chain project scheduling",
+   "author": "Herman Steyn",
+   "year": 2001,
+   "url": "https://doi.org/10.1016/s0263-7863(00)00026-0",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Statistics behind aggregated buffers."
+  },
+  {
+   "id": "pap-trietsch-2005",
+   "title": "From management by constraints (MBC) to management by criticalities (MBC II)",
+   "author": "Dan Trietsch",
+   "year": 2005,
+   "url": "https://doi.org/10.3233/HSM-2005-24109",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Critique: DBR internally inconsistent; proposes capacity by criticality."
+  },
+  {
+   "id": "pap-tukel-2006",
+   "title": "An investigation of buffer sizing techniques in critical chain scheduling",
+   "author": "Oya I. Tukel; Walter O. Rom; Sandra D. Eksioglu",
+   "year": 2006,
+   "url": "https://doi.org/10.1016/j.ejor.2004.10.019",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Compares cut-and-paste 50% with root-square and density-based buffer sizing."
+  },
+  {
+   "id": "pap-watson-2007",
+   "title": "The evolution of a management philosophy: the theory of constraints",
+   "author": "Kevin J. Watson; John H. Blackstone; Stanley C. Gardiner",
+   "year": 2007,
+   "url": "https://doi.org/10.1016/j.jom.2006.04.004",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "History from OPT to TOC era by era; good timeline source."
+  },
+  {
+   "id": "pap-wu-1994",
+   "title": "A simulation analysis of the effectiveness of drum-buffer-rope scheduling in furniture manufacturing",
+   "author": "Shih-Yun Wu; John S. Morris; Thomas M. Gordon",
+   "year": 1994,
+   "url": "https://doi.org/10.1016/0360-8352(94)90010-8",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Early DBR simulation vs current practice."
+  },
+  {
+   "id": "pap-yuan-2003",
+   "title": "Enhancement of Theory of Constraints replenishment using a novel generic buffer management procedure",
+   "author": "Kuo-Jung Yuan; Sheng-Hung Chang; Rong-Kwei Li",
+   "year": 2003,
+   "url": "https://doi.org/10.1080/0020754031000065502",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Formal replenishment buffer-adjust procedure; tests against fixed buffers."
+  },
+  {
+   "id": "paper-kingman-1961",
+   "title": "The single server queue in heavy traffic",
+   "author": "J. F. C. Kingman",
+   "year": 1961,
+   "url": "https://doi.org/10.1017/S0305004100036094",
+   "type": "paper",
+   "license": "copyright",
+   "adds": "Origin of Kingman's heavy-traffic approximation (Proc. Cambridge Philos. Soc. 57(4))."
+  },
+  {
+   "id": "repo-admm67-toc-dbr-belt",
+   "title": "admm67/TOC_DBR_Belt",
+   "author": "admm67",
+   "year": 2025,
+   "url": "https://github.com/admm67/TOC_DBR_Belt",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Browser DBR sim for belt plant, with user guide. No license."
+  },
+  {
+   "id": "repo-ciwpython-ciw",
+   "title": "CiwPython/Ciw",
+   "author": "CiwPython",
+   "year": 2025,
+   "url": "https://github.com/CiwPython/Ciw",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Queueing network sim: verify Little's law and line results."
+  },
+  {
+   "id": "repo-claur-projectlibre",
+   "title": "claur/ProjectLibre",
+   "author": "claur",
+   "year": 2025,
+   "url": "https://github.com/claur/ProjectLibre",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "ProjectLibre source mirror. No CC features."
+  },
+  {
+   "id": "repo-corigami-toc-sim",
+   "title": "corigami/ToC-Sim",
+   "author": "corigami",
+   "year": 2016,
+   "url": "https://github.com/corigami/ToC-Sim",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Old JS TOC simulator. No license."
+  },
+  {
+   "id": "repo-exupero-pennygame",
+   "title": "exupero/pennygame",
+   "author": "exupero",
+   "year": 2017,
+   "url": "https://github.com/exupero/pennygame",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "ClojureScript penny game UI idea. No license."
+  },
+  {
+   "id": "repo-focusedobjective-focusedobjective-resources",
+   "title": "FocusedObjective/FocusedObjective.Resources",
+   "author": "FocusedObjective",
+   "year": 2021,
+   "url": "https://github.com/FocusedObjective/FocusedObjective.Resources",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Monte Carlo forecasting spreadsheets (Troy Magennis). No license in API."
+  },
+  {
+   "id": "repo-gacnik1994-drumbufferrope",
+   "title": "gacnik1994/DrumBufferRope",
+   "author": "gacnik1994",
+   "year": 2023,
+   "url": "https://github.com/gacnik1994/DrumBufferRope",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "C++ DBR production sim with buffer result files. No license."
+  },
+  {
+   "id": "repo-hanneskarey-ccpm-larry-leach-example",
+   "title": "HannesKarey/CCPM_Larry_Leach_Example",
+   "author": "HannesKarey",
+   "year": 2012,
+   "url": "https://github.com/HannesKarey/CCPM_Larry_Leach_Example",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "TaskJuggler files for a Leach CCPM example."
+  },
+  {
+   "id": "repo-jtigger-kanban-simulator",
+   "title": "jtigger/kanban-simulator",
+   "author": "jtigger",
+   "year": 2012,
+   "url": "https://github.com/jtigger/kanban-simulator",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Java workflow sim. No license."
+  },
+  {
+   "id": "repo-juergenkanz-pq-solution",
+   "title": "JuergenKanz/PQ-Solution",
+   "author": "JuergenKanz",
+   "year": 2021,
+   "url": "https://github.com/JuergenKanz/PQ-Solution",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "P&Q integer LP in Mathematica and Jupyter; confirms P=100, Q=30, NP=300."
+  },
+  {
+   "id": "repo-juergenkanz-socratictoc",
+   "title": "JuergenKanz/SocraticTOC",
+   "author": "JuergenKanz",
+   "year": 2021,
+   "url": "https://github.com/JuergenKanz/SocraticTOC",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Interactive mind map of TOC questions."
+  },
+  {
+   "id": "repo-juliadynamics-discreteevents-jl",
+   "title": "JuliaDynamics/DiscreteEvents.jl",
+   "author": "JuliaDynamics",
+   "year": 2023,
+   "url": "https://github.com/JuliaDynamics/DiscreteEvents.jl",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "DES library with Goldratt dice game example and DOE on buffers and variation."
+  },
+  {
+   "id": "repo-kirushik-critical-chain",
+   "title": "kirushik/critical_chain",
+   "author": "kirushik",
+   "year": 2026,
+   "url": "https://github.com/kirushik/critical_chain",
+   "type": "repo",
+   "license": "AGPL-3.0",
+   "adds": "Rails buffer estimator for CC estimates."
+  },
+  {
+   "id": "repo-madxmike-cloud-break",
+   "title": "madxmike/cloud-break",
+   "author": "madxmike",
+   "year": 2026,
+   "url": "https://github.com/madxmike/cloud-break",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "TUI and CLI for evaporating clouds with JSON documents."
+  },
+  {
+   "id": "repo-michelgrootjans-dot-game",
+   "title": "michelgrootjans/dot-game",
+   "author": "michelgrootjans",
+   "year": 2026,
+   "url": "https://github.com/michelgrootjans/dot-game",
+   "type": "repo",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Multiplayer batch-size flow game; workshop script."
+  },
+  {
+   "id": "repo-michelgrootjans-explaining-flow",
+   "title": "michelgrootjans/explaining-flow",
+   "author": "michelgrootjans",
+   "year": 2026,
+   "url": "https://github.com/michelgrootjans/explaining-flow",
+   "type": "repo",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Browser flow sim: throughput, cycle time, WIP by team structure. UI pattern for station sim."
+  },
+  {
+   "id": "repo-mironv-beerdistribution",
+   "title": "MironV/beerdistribution",
+   "author": "MironV",
+   "year": 2017,
+   "url": "https://github.com/MironV/beerdistribution",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Multiplayer beer game web app. API says NOASSERTION; LICENSE.md is MIT."
+  },
+  {
+   "id": "repo-niksilver-ccpm",
+   "title": "niksilver/ccpm",
+   "author": "niksilver",
+   "year": 2015,
+   "url": "https://github.com/niksilver/ccpm",
+   "type": "repo",
+   "license": "GPL-3.0",
+   "adds": "Scala DSL to model CCPM plans."
+  },
+  {
+   "id": "repo-optmlgroup-deepbeerinventory-rl",
+   "title": "OptMLGroup/DeepBeerInventory-RL",
+   "author": "OptMLGroup",
+   "year": 2021,
+   "url": "https://github.com/OptMLGroup/DeepBeerInventory-RL",
+   "type": "repo",
+   "license": "BSD-3-Clause",
+   "adds": "RL agent for beer game; base-stock comparison."
+  },
+  {
+   "id": "repo-orlov-ai-beer-game-env",
+   "title": "orlov-ai/beer-game-env",
+   "author": "orlov-ai",
+   "year": 2019,
+   "url": "https://github.com/orlov-ai/beer-game-env",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Beer game as Gym environment."
+  },
+  {
+   "id": "repo-pbayer-discreteeventscompanion-jl",
+   "title": "pbayer/DiscreteEventsCompanion.jl",
+   "author": "pbayer",
+   "year": 2020,
+   "url": "https://github.com/pbayer/DiscreteEventsCompanion.jl",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Tutorials and notebooks for DiscreteEvents.jl, including dice game examples."
+  },
+  {
+   "id": "repo-presence-calculus-samplepath-flow",
+   "title": "presence-calculus/samplepath-flow",
+   "author": "presence-calculus",
+   "year": 2026,
+   "url": "https://github.com/presence-calculus/samplepath-flow",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Sample-path Little's law flow metrics. API says NOASSERTION; LICENSE is MIT."
+  },
+  {
+   "id": "repo-raymyers-toc-lang",
+   "title": "raymyers/toc-lang",
+   "author": "raymyers",
+   "year": 2025,
+   "url": "https://github.com/raymyers/toc-lang",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Text notation to goal tree, CRT, EC with SVG export. No license file in API."
+  },
+  {
+   "id": "repo-rnwolf-ccpm-scheduler",
+   "title": "rnwolf/ccpm-scheduler",
+   "author": "rnwolf",
+   "year": 2026,
+   "url": "https://github.com/rnwolf/ccpm-scheduler",
+   "type": "repo",
+   "license": "Apache-2.0",
+   "adds": "Deterministic CCPM scheduler: resource leveling, ALAP, project and feeding buffers, Gantt output."
+  },
+  {
+   "id": "repo-rnwolf-dbr",
+   "title": "rnwolf/dbr",
+   "author": "rnwolf",
+   "year": 2025,
+   "url": "https://github.com/rnwolf/dbr",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "DBR scheduling web app (backend, frontend, BDD tests)."
+  },
+  {
+   "id": "repo-rogerkwilliams-crt-builder",
+   "title": "RogerKWilliams/crt-builder",
+   "author": "RogerKWilliams",
+   "year": 2026,
+   "url": "https://github.com/RogerKWilliams/crt-builder",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Browser CRT editor: UDEs, AND junctions, local storage."
+  },
+  {
+   "id": "repo-ryanfreckleton-thinkgraph",
+   "title": "ryanfreckleton/thinkgraph",
+   "author": "ryanfreckleton",
+   "year": 2022,
+   "url": "https://github.com/ryanfreckleton/thinkgraph",
+   "type": "repo",
+   "license": "GPL-3.0",
+   "adds": "Mini-language to Graphviz for thinking-process trees."
+  },
+  {
+   "id": "repo-salabim-salabim",
+   "title": "salabim/salabim",
+   "author": "salabim",
+   "year": 2026,
+   "url": "https://github.com/salabim/salabim",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Python DES with animation. GitHub API: none; PyPI: MIT."
+  },
+  {
+   "id": "repo-taskjuggler-taskjuggler",
+   "title": "taskjuggler/TaskJuggler",
+   "author": "taskjuggler",
+   "year": 2025,
+   "url": "https://github.com/taskjuggler/TaskJuggler",
+   "type": "repo",
+   "license": "GPL-2.0",
+   "adds": "Scheduler with resource leveling; base for CC chains via manual buffers."
+  },
+  {
+   "id": "repo-team-simpy-simpy",
+   "title": "team-simpy/simpy",
+   "author": "team-simpy",
+   "year": 2026,
+   "url": "https://gitlab.com/team-simpy/simpy",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "Standard Python DES. GitLab, 122 stars."
+  },
+  {
+   "id": "repo-transentis-bptk-py",
+   "title": "transentis/bptk_py",
+   "author": "transentis",
+   "year": 2026,
+   "url": "https://github.com/transentis/bptk_py",
+   "type": "repo",
+   "license": "MIT",
+   "adds": "System dynamics and agent library; beer game models moved to tutorial."
+  },
+  {
+   "id": "repo-zinch-goldratt-game-with-matches",
+   "title": "zinch/goldratt_game_with_matches",
+   "author": "zinch",
+   "year": 2022,
+   "url": "https://github.com/zinch/goldratt_game_with_matches",
+   "type": "repo",
+   "license": "unknown",
+   "adds": "Small Python matchstick game model with tests. No license: read only."
+  },
+  {
+   "id": "sum-fredlybrand-plot",
+   "title": "Goldratt's The Goal: Just the Plot (chapter by chapter, scene by scene)",
+   "author": "Fred Lybrand",
+   "year": 2021,
+   "url": "https://fredlybrand.com/2021/03/23/goldratts-the-goal-just-the-plot-chapter-by-chapter-scene-by-scene/",
+   "type": "summary",
+   "license": "copyright",
+   "adds": "All 40 chapters with Jonah presence per chapter. Edition not stated."
+  },
+  {
+   "id": "sum-litcharts",
+   "title": "The Goal: A Process of Ongoing Improvement - Summary and chapter pages",
+   "author": "LitCharts",
+   "year": null,
+   "url": "https://www.litcharts.com/lit/the-goal-a-process-of-ongoing-improvement/summary",
+   "type": "summary",
+   "license": "copyright",
+   "adds": "40 chapter pages. Full text read for summary page and ch 1-5 only; ch 6-40 blocked (HTTP 202 empty); ch 13, 15, 17 seen in search snippets. Edition not stated."
+  },
+  {
+   "id": "sum-rumproarious",
+   "title": "The Goal - notes",
+   "author": "Rumproarious",
+   "year": null,
+   "url": "https://rumproarious.com/notes/the-goal/",
+   "type": "summary",
+   "license": "copyright",
+   "adds": "Notes for ch 1-6 and 9-31; no ch 7-8; no ch 32-40. Used for numbering cross-check."
+  },
+  {
+   "id": "sum-tcagley",
+   "title": "Re-Read Saturday: The Goal, Part 16 (ch 37-38)",
+   "author": "Tom Cagley",
+   "year": 2015,
+   "url": "https://tcagley.wordpress.com/2015/06/06/re-read-saturday-the-goal-a-process-of-ongoing-improvement-part-16/",
+   "type": "summary",
+   "license": "copyright",
+   "adds": "Ch 37-38 detail; series covers ch 36 in part 15."
+  },
+  {
+   "id": "sum-velocity",
+   "title": "The Goal Book Summary and Review - All 40 Chapters",
+   "author": "Lisa Lang (Velocity Scheduling System)",
+   "year": 2026,
+   "url": "https://www.velocityschedulingsystem.com/blog/the-goal-book-eliyahu-goldratt/",
+   "type": "summary",
+   "license": "copyright",
+   "adds": "All 40 chapters with concept per chapter; refers to 30th anniversary edition (2014)."
+  },
+  {
+   "id": "video-marris-fever-chart",
+   "title": "The fever chart explained",
+   "author": "Philip Marris",
+   "year": null,
+   "url": "https://critical-chain-projects.com/videos/theory/the-fever-chart-explained-by-philip-marris",
+   "type": "video",
+   "license": "copyright",
+   "adds": "Short video on reading a CCPM fever chart."
+  },
+  {
+   "id": "web-archive-1986",
+   "title": "The goal: a process of ongoing improvement (rev. ed. 1986) catalog record",
+   "author": "Internet Archive",
+   "year": 1986,
+   "url": "https://archive.org/details/goalprocessofo00gold",
+   "type": "book",
+   "license": "catalog metadata",
+   "adds": "1986 revised edition, North River Press, 294 pages."
+  },
+  {
+   "id": "web-audible-30th",
+   "title": "The Goal 30th Anniversary Edition audiobook",
+   "author": "Audible",
+   "year": 2014,
+   "url": "https://www.audible.ca/author/エリヤフ・ゴールドラット/B000APWH4C",
+   "type": "web",
+   "license": "copyright",
+   "adds": "30th anniv. audiobook, unabridged, about 11 h 45 min, HighBridge, March 2014. Seen via search snippet."
+  },
+  {
+   "id": "web-audiofile-2006",
+   "title": "The Goal, read by a full cast (AudioFile review)",
+   "author": "AudioFile Magazine",
+   "year": 2006,
+   "url": "https://www.audiofilemagazine.com/reviews/read/27558/the-goal-by-eliyahu-m-goldratt-jeff-cox-read-by-a-full-cast",
+   "type": "web",
+   "license": "copyright",
+   "adds": "2006 full-cast unabridged audiobook, HighBridge Audio, about 11.5 h, revised 3rd edition, narrator Eric Conger. Seen via search snippet."
+  },
+  {
+   "id": "web-chegg-31-40",
+   "title": "Chapters 31-40 of The Goal study question",
+   "author": "Chegg",
+   "year": null,
+   "url": "https://www.chegg.com/homework-help/questions-and-answers/chapters-31-40-goal-process-ongoing-improvement-eliyahu-m-goldratt-jeff-cox-quite-change-p-q119508983",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Implies the story once ended at ch 30. Seen via search snippet only."
+  },
+  {
+   "id": "web-dbrmfg-guide",
+   "title": "A Guide to Implementing the Theory of Constraints",
+   "author": "Kelvyn Youngman",
+   "year": null,
+   "url": "https://dbrmfg.co.nz/",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Large free TOC guide: DBR, buffer management, replenishment, TA, thinking processes."
+  },
+  {
+   "id": "web-dbrmfg-pq",
+   "title": "A Guide to Implementing TOC: P&Q question and answers",
+   "author": "Kelvyn Youngman",
+   "year": null,
+   "url": "https://dbrmfg.co.nz/Bottom%20Line%20Measurements%20P%20&%20Q%20Question.htm",
+   "type": "web",
+   "license": "copyright",
+   "adds": "P&Q data, wrong cost answers, B load 3000 min, T/CU, NP +300 answer."
+  },
+  {
+   "id": "web-discreteevents-dicegame",
+   "title": "Goldratt's Dice Game (DiscreteEvents.jl example)",
+   "author": "Paul Bayer",
+   "year": 2020,
+   "url": "https://juliadynamics.github.io/DiscreteEvents.jl/v0.2/examples/dicegame/dicegame",
+   "type": "web",
+   "license": "MIT",
+   "adds": "Simulated dice line: 272 of 286 expected; buffer and variation effects from 3300 runs."
+  },
+  {
+   "id": "web-flying-logic",
+   "title": "Flying Logic",
+   "author": "Sciral",
+   "year": null,
+   "url": "https://flyinglogic.com/",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Commercial thinking-process diagram tool (CRT, EC, FRT). Not open source."
+  },
+  {
+   "id": "web-giants-essay",
+   "title": "Standing on the Shoulders of Giants",
+   "author": "Eliyahu M. Goldratt",
+   "year": 2006,
+   "url": "https://businesswales.gov.wales/sites/main/files/documents/Standing-on-the-Shoulders-of-Giants.pdf",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Primary: time buffer = half current lead time; thirds colors; red <5% shrink, >10% grow buffer."
+  },
+  {
+   "id": "web-goldratt-marketing",
+   "title": "Goldratt Marketing Group (TOC store)",
+   "author": "Goldratt Marketing Group",
+   "year": null,
+   "url": "https://www.toc-goldratt.com/en/about-gmg",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Goldratt self-learning and video store. No site named Goldratt Marketplace found."
+  },
+  {
+   "id": "web-goldratt-sdbr-ch9",
+   "title": "From DBR to Simplified-DBR for Make-to-Order (TOC Handbook ch. 9)",
+   "author": "Eli Schragenheim",
+   "year": 2010,
+   "url": "https://www.toc-goldratt.com/en/product/from-dbr-to-simplified-dbr-for-make-to-order-chapter-9-of-the-theory-of-constraints-handbook",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Sales page for S-DBR chapter; primary S-DBR text."
+  },
+  {
+   "id": "web-goodreads-2329169",
+   "title": "The Goal (Goodreads edition page)",
+   "author": "Goodreads",
+   "year": null,
+   "url": "https://www.goodreads.com/book/show/2329169",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Second edition adds 10 chapters (plant manager to division manager). Seen via search snippet only."
+  },
+  {
+   "id": "web-idempiere-toc-bm",
+   "title": "Plugin: TOC Buffer Management (iDempiere wiki)",
+   "author": "iDempiere community",
+   "year": null,
+   "url": "https://wiki.idempiere.org/en/Plugin:_TOC_Buffer_Management",
+   "type": "web",
+   "license": "unknown",
+   "adds": "ERP replenishment zones and DBM with fixed 33.33% resize. Site gives 403 to scripts; found by web search."
+  },
+  {
+   "id": "web-northriver-30th",
+   "title": "30th Anniversary edition of The Goal published",
+   "author": "North River Press",
+   "year": 2014,
+   "url": "https://northriverpress.com/30th-anniversary-edition-of-the-goal-published/",
+   "type": "web",
+   "license": "copyright",
+   "adds": "2014: narrative updated, Five Focusing Steps added, essay Standing on the Shoulders of Giants; FSB interviews of 20th and 25th anniv. editions removed."
+  },
+  {
+   "id": "web-projectlibre",
+   "title": "ProjectLibre",
+   "author": "ProjectLibre",
+   "year": null,
+   "url": "https://projectlibre.com/",
+   "type": "web",
+   "license": "unknown",
+   "adds": "Open MS Project alternative. No critical chain buffers; CPM only."
+  },
+  {
+   "id": "web-prweb-graphic",
+   "title": "The Business Novel that Revolutionized Manufacturing Finds New Audience in Tech",
+   "author": "PRWeb / North River Press",
+   "year": 2017,
+   "url": "https://www.prweb.com/releases/the_business_novel_that_revolutionized_manufacturing_finds_new_audience_in_tech/prweb14588741.htm",
+   "type": "web",
+   "license": "copyright",
+   "adds": "2017 graphic novel by Dwight Jon Zimmerman and Dean Motter."
+  },
+  {
+   "id": "web-tocico-bok",
+   "title": "TOC Body of Knowledge",
+   "author": "TOCICO",
+   "year": null,
+   "url": "https://www.tocico.org/toc-body-of-knowledge",
+   "type": "web",
+   "license": "copyright",
+   "adds": "States dictionary is the recognized TOC body of knowledge."
+  },
+  {
+   "id": "web-tocico-cc-terms",
+   "title": "TOCICO Dictionary 2nd edition: critical chain terms",
+   "author": "TOCICO",
+   "year": null,
+   "url": "https://www.tocico.org/_files/ugd/af4d5f_d4914b5dc3664c94888503caa0de960a.pdf",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Free excerpt: 50% estimate, project buffer = 1/3 duration rule, burn rate, fever chart zones."
+  },
+  {
+   "id": "web-tocico-dictionary",
+   "title": "TOCICO Dictionary, 2nd edition (download page)",
+   "author": "TOCICO; James F. Cox III et al.",
+   "year": null,
+   "url": "https://learningcenter.tocico.org/courses/TOCICODictionary",
+   "type": "web",
+   "license": "copyright",
+   "adds": "Official TOC term definitions. Paid or member download."
+  },
+  {
+   "id": "web-unt-catalog",
+   "title": "The goal: a process of ongoing improvement (3rd rev. ed.) catalog record",
+   "author": "University of North Texas Libraries",
+   "year": 2004,
+   "url": "https://discover.library.unt.edu/catalog/b7727772",
+   "type": "book",
+   "license": "catalog metadata",
+   "adds": "Copyright 1984, 1986, 1992, 2004; interviews by David Whitford (Fortune Small Business). Seen via search snippet only."
+  },
+  {
+   "id": "web-wolfram-pq",
+   "title": "The P&Q Problem (Wolfram Demonstrations Project)",
+   "author": "Jürgen Kanz",
+   "year": 2020,
+   "url": "https://demonstrations.wolfram.com/ThePQProblem/",
+   "type": "web",
+   "license": "unknown",
+   "adds": "Interactive P&Q mix explorer; self-check NP max = 300."
+  },
+  {
+   "id": "wiki-critical-chain",
+   "title": "Critical chain project management",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Critical_chain_project_management",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "50% estimates, project, feeding, resource buffers, fever chart, multitasking."
+  },
+  {
+   "id": "wiki-drum-buffer-rope",
+   "title": "Theory of constraints: Operations (drum-buffer-rope)",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Theory_of_constraints#Operations",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "No standalone English DBR article (404); DBR text lives in TOC article section."
+  },
+  {
+   "id": "wiki-evaporating-cloud",
+   "title": "Evaporating cloud",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Evaporating_cloud",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "EC structure A-B-C-D-D' and assumption surfacing."
+  },
+  {
+   "id": "wiki-goldratt",
+   "title": "Eliyahu M. Goldratt",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Biography and bibliography."
+  },
+  {
+   "id": "wiki-littles-law",
+   "title": "Little's law",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Little%27s_law",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "L = λW statement, conditions, uses."
+  },
+  {
+   "id": "wiki-the-goal-novel",
+   "title": "The Goal (novel)",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/The_Goal_(novel)",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Plot summary, editions, adaptations."
+  },
+  {
+   "id": "wiki-theory-of-constraints",
+   "title": "Theory of constraints",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Theory_of_constraints",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "Five steps, buffers, VATI, DBR, S-DBR, replenishment 1/3 resize, criticism with sources."
+  },
+  {
+   "id": "wiki-thinking-processes",
+   "title": "Thinking processes (theory of constraints)",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Thinking_processes_(theory_of_constraints)",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "List and purpose of CRT, EC, FRT, PRT, TrT."
+  },
+  {
+   "id": "wiki-throughput-accounting",
+   "title": "Throughput accounting",
+   "author": "Wikipedia contributors",
+   "year": null,
+   "url": "https://en.wikipedia.org/wiki/Throughput_accounting",
+   "type": "web",
+   "license": "CC-BY-SA-4.0",
+   "adds": "T = S - TVC, NP = T - OE, ROI = NP/I, T/OE, T/I."
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+.worktrees/
+.proof/
+__pycache__/
+.playwright-cli/
+/local/
+.claude/
+/reports/

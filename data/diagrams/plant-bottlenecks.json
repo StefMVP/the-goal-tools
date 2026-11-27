@@ -1,0 +1,108 @@
+{
+ "id": "plant-bottlenecks",
+ "title": "Plant flow: two bottlenecks feed assembly",
+ "kind": "flow",
+ "concepts": [
+  "bottleneck",
+  "non-bottleneck",
+  "priority-tags",
+  "quality-before-bottleneck",
+  "constraint-shift"
+ ],
+ "chapters": [
+  18,
+  19,
+  21,
+  24
+ ],
+ "nodes": [
+  {
+   "id": "rm",
+   "label": "Raw material release",
+   "type": "source"
+  },
+  {
+   "id": "nb",
+   "label": "Non-bottleneck machining",
+   "type": "resource"
+  },
+  {
+   "id": "qc",
+   "label": "QC moved in front of bottlenecks",
+   "type": "check"
+  },
+  {
+   "id": "ncx",
+   "label": "NCX-10 (bottleneck)",
+   "type": "constraint"
+  },
+  {
+   "id": "ht",
+   "label": "Heat treat (bottleneck)",
+   "type": "constraint"
+  },
+  {
+   "id": "green",
+   "label": "Parts that skip bottlenecks (green tags)",
+   "type": "resource"
+  },
+  {
+   "id": "asm",
+   "label": "Final assembly",
+   "type": "resource"
+  },
+  {
+   "id": "ship",
+   "label": "Shipping (throughput)",
+   "type": "sink"
+  }
+ ],
+ "edges": [
+  {
+   "from": "rm",
+   "to": "nb"
+  },
+  {
+   "from": "nb",
+   "to": "qc",
+   "label": "red-tag parts"
+  },
+  {
+   "from": "qc",
+   "to": "ncx"
+  },
+  {
+   "from": "qc",
+   "to": "ht"
+  },
+  {
+   "from": "ncx",
+   "to": "asm"
+  },
+  {
+   "from": "ht",
+   "to": "asm"
+  },
+  {
+   "from": "rm",
+   "to": "green"
+  },
+  {
+   "from": "green",
+   "to": "asm",
+   "label": "must also arrive"
+  },
+  {
+   "from": "asm",
+   "to": "ship"
+  }
+ ],
+ "notes": [
+  "Assembly needs red and green parts. Too much red release starves green parts: a new shortage, not a new bottleneck.",
+  "Simplified; not the full plant routing."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal"
+ ]
+}

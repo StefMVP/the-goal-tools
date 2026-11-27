@@ -1,0 +1,757 @@
+{
+ "tools": [
+  {
+   "id": "dice-game-sim",
+   "name": "Matchstick dice game",
+   "kind": "simulator",
+   "purpose": "Show that dependent steps with variation give less than average output and growing WIP.",
+   "inputs": [
+    "stations (default 5)",
+    "die faces per station (default 1-6)",
+    "rounds (default 20)",
+    "initial WIP per station",
+    "rope on/off",
+    "one slow station"
+   ],
+   "outputs": [
+    "output per round",
+    "cumulative output vs mean x rounds",
+    "WIP per station per round",
+    "cumulative deviation per station"
+   ],
+   "logic": "Seeded RNG. Each round, for k in order: moved_k = min(roll_k, wip_k) (station 1 has unlimited input unless rope). wip_{k+1} += moved_k. Rope: station 1 input = moves of the slowest station last round.",
+   "concepts": [
+    "matchstick-dice-game",
+    "dependent-events",
+    "statistical-fluctuations",
+    "rope"
+   ],
+   "priority": 1,
+   "reuse": [
+    "repo-juliadynamics-discreteevents-jl",
+    "web-discreteevents-dicegame"
+   ],
+   "refs": [
+    "bk-the-goal",
+    "pap-lambrecht-2012"
+   ]
+  },
+  {
+   "id": "herbie-line-sim",
+   "name": "Herbie hike line",
+   "kind": "simulator",
+   "purpose": "Show line length (WIP) growth and fixes: Herbie first, lighter load, rope.",
+   "inputs": [
+    "walkers with mean speed and spread",
+    "order",
+    "rope length",
+    "load moved from slowest"
+   ],
+   "outputs": [
+    "troop speed",
+    "line length over time",
+    "position per walker"
+   ],
+   "logic": "Each tick walker i moves min(own random step, gap to walker i-1 if rope) ; troop progress = last walker position.",
+   "concepts": [
+    "herbie-hike",
+    "bottleneck",
+    "rope"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal"
+   ]
+  },
+  {
+   "id": "tioe-calculator",
+   "name": "T, I, OE decision calculator",
+   "kind": "calculator",
+   "purpose": "Turn a decision into delta T, I, OE and the effect on NP, ROI, productivity.",
+   "inputs": [
+    "sales",
+    "totally variable cost",
+    "inventory",
+    "operating expense",
+    "delta for each"
+   ],
+   "outputs": [
+    "T",
+    "NP",
+    "ROI",
+    "productivity T/OE",
+    "inventory turns T/I",
+    "verdict"
+   ],
+   "logic": "T = sales - TVC; NP = T - OE; ROI = NP / I; accept if delta NP > 0 and delta ROI >= 0.",
+   "concepts": [
+    "throughput",
+    "inventory",
+    "operating-expense",
+    "global-measures",
+    "throughput-accounting"
+   ],
+   "priority": 1,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal",
+    "wiki-throughput-accounting"
+   ]
+  },
+  {
+   "id": "product-mix-calc",
+   "name": "Product mix by T per constraint minute",
+   "kind": "calculator",
+   "purpose": "Pick product mix by T per constraint minute; compare with margin-based choice.",
+   "inputs": [
+    "products: price, TVC, demand",
+    "resources: minutes per unit per product, capacity",
+    "OE"
+   ],
+   "outputs": [
+    "load per resource",
+    "constraint",
+    "T per constraint minute rank",
+    "mix and NP (TOC)",
+    "mix and NP (cost world)"
+   ],
+   "logic": "Find resource with max load/capacity. Rank by (price - TVC)/minutes on it. Fill demand in rank order until capacity ends. Preset: P&Q example.",
+   "concepts": [
+    "product-mix-pq",
+    "throughput-accounting",
+    "exploit-constraint"
+   ],
+   "priority": 1,
+   "reuse": [
+    "repo-juergenkanz-pq-solution"
+   ],
+   "refs": [
+    "bk-haystack-syndrome",
+    "web-dbrmfg-pq"
+   ]
+  },
+  {
+   "id": "bottleneck-finder",
+   "name": "Bottleneck finder",
+   "kind": "calculator",
+   "purpose": "Find bottleneck and CCRs from load versus capacity.",
+   "inputs": [
+    "resources and available hours",
+    "work orders with routing and hours"
+   ],
+   "outputs": [
+    "load % per resource",
+    "bottleneck",
+    "CCR list (> 85%)"
+   ],
+   "logic": "load = sum(hours needed)/available. Bottleneck = max load >= 100%. CCR = load >= 85%.",
+   "concepts": [
+    "bottleneck",
+    "non-bottleneck",
+    "capacity-constrained-resource",
+    "identify-constraint"
+   ],
+   "priority": 1,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal",
+    "bk-haystack-syndrome"
+   ]
+  },
+  {
+   "id": "bottleneck-hour-cost",
+   "name": "Cost of a lost bottleneck hour",
+   "kind": "calculator",
+   "purpose": "Price lost constraint time in system throughput.",
+   "inputs": [
+    "system T per period",
+    "constraint hours per period",
+    "lost minutes by cause"
+   ],
+   "outputs": [
+    "T per constraint hour",
+    "lost T per cause",
+    "Pareto of causes"
+   ],
+   "logic": "Value = T / constraint hours. Lost T = minutes / 60 x value. Sort causes.",
+   "concepts": [
+    "bottleneck-hour-lost",
+    "quality-before-bottleneck",
+    "bottleneck-idle-time"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal"
+   ]
+  },
+  {
+   "id": "batch-size-sim",
+   "name": "Batch size and lead time",
+   "kind": "simulator",
+   "purpose": "Show how process and transfer batch size change WIP and lead time.",
+   "inputs": [
+    "steps with setup and unit time",
+    "process batch",
+    "transfer batch",
+    "demand"
+   ],
+   "outputs": [
+    "lead time",
+    "WIP",
+    "setup share of time per step"
+   ],
+   "logic": "Flow shop: each step starts after a transfer batch arrives; setup per process batch. Report lead time = completion - release.",
+   "concepts": [
+    "batch-size",
+    "four-time-elements",
+    "non-bottleneck-mirage"
+   ],
+   "priority": 2,
+   "reuse": [
+    "repo-ciwpython-ciw"
+   ],
+   "refs": [
+    "bk-the-goal",
+    "bk-factory-physics"
+   ]
+  },
+  {
+   "id": "dbr-sim",
+   "name": "Drum-Buffer-Rope line",
+   "kind": "simulator",
+   "purpose": "Compare push release with DBR release on T, WIP and due-date performance.",
+   "inputs": [
+    "stations with capacity distribution",
+    "constraint station",
+    "buffer time",
+    "release rule push/rope"
+   ],
+   "outputs": [
+    "throughput",
+    "WIP",
+    "lead time",
+    "buffer penetration"
+   ],
+   "logic": "Discrete time. Push: release at max rate. Rope: release when WIP ahead of constraint < buffer time x constraint rate.",
+   "concepts": [
+    "drum-buffer-rope",
+    "buffer",
+    "rope",
+    "subordinate",
+    "s-dbr"
+   ],
+   "priority": 1,
+   "reuse": [
+    "repo-rnwolf-dbr",
+    "repo-team-simpy-simpy"
+   ],
+   "refs": [
+    "bk-the-goal",
+    "wiki-drum-buffer-rope"
+   ]
+  },
+  {
+   "id": "buffer-board",
+   "name": "Buffer status board",
+   "kind": "board",
+   "purpose": "Color orders by buffer penetration and show cause Pareto.",
+   "inputs": [
+    "orders: release, due, buffer, status",
+    "cause per red order"
+   ],
+   "outputs": [
+    "orders sorted by penetration",
+    "green/yellow/red/black counts",
+    "fever chart for projects"
+   ],
+   "logic": "penetration = (now - release)/(due - release) for open orders; green < 1/3, yellow < 2/3, red <= 1, black > 1.",
+   "concepts": [
+    "buffer-management",
+    "priority-tags",
+    "buffer",
+    "critical-chain"
+   ],
+   "priority": 1,
+   "reuse": [],
+   "refs": [
+    "bk-toc-handbook"
+   ]
+  },
+  {
+   "id": "five-steps-checklist",
+   "name": "Five focusing steps checklist",
+   "kind": "checklist",
+   "purpose": "Walk a system through the five steps and catch inertia.",
+   "inputs": [
+    "system name",
+    "candidate constraint"
+   ],
+   "outputs": [
+    "answers per step",
+    "open rules to review"
+   ],
+   "logic": "Fixed question list per step; step 5 lists every rule made for the old constraint.",
+   "concepts": [
+    "five-focusing-steps",
+    "inertia",
+    "identify-constraint",
+    "exploit-constraint",
+    "subordinate",
+    "elevate-constraint"
+   ],
+   "priority": 1,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal",
+    "bk-theory-of-constraints"
+   ]
+  },
+  {
+   "id": "evaporating-cloud-template",
+   "name": "Evaporating cloud",
+   "kind": "template",
+   "purpose": "Build a five-box conflict cloud and list assumptions and injections.",
+   "inputs": [
+    "A objective",
+    "B and C needs",
+    "D and D' wants",
+    "assumptions per arrow"
+   ],
+   "outputs": [
+    "cloud diagram",
+    "read-out text",
+    "injections"
+   ],
+   "logic": "Five nodes, five arrows (A<-B, A<-C, B<-D, C<-D', D x D'). Read-out: in order to A, we must B; in order to B we must D, because ...",
+   "concepts": [
+    "evaporating-cloud",
+    "injection",
+    "policy-constraint"
+   ],
+   "priority": 1,
+   "reuse": [
+    "repo-madxmike-cloud-break"
+   ],
+   "refs": [
+    "bk-dettmer-logical-thinking-process"
+   ]
+  },
+  {
+   "id": "tp-tree-builder",
+   "name": "Thinking Process tree builder",
+   "kind": "template",
+   "purpose": "Build CRT, FRT, NBR, PRT and TT trees with AND groups.",
+   "inputs": [
+    "entities",
+    "arrows",
+    "AND groups",
+    "tree type"
+   ],
+   "outputs": [
+    "tree diagram",
+    "if-then read-out",
+    "entities that reach most UDEs"
+   ],
+   "logic": "Directed graph; AND group = edges sharing group id. Core problem = node with most downstream UDEs.",
+   "concepts": [
+    "current-reality-tree",
+    "future-reality-tree",
+    "negative-branch",
+    "prerequisite-tree",
+    "transition-tree",
+    "undesirable-effect"
+   ],
+   "priority": 2,
+   "reuse": [
+    "repo-rogerkwilliams-crt-builder"
+   ],
+   "refs": [
+    "bk-dettmer-logical-thinking-process"
+   ]
+  },
+  {
+   "id": "clr-checklist",
+   "name": "CLR checklist",
+   "kind": "checklist",
+   "purpose": "Test each arrow of a tree against the eight reservations.",
+   "inputs": [
+    "cause",
+    "effect"
+   ],
+   "outputs": [
+    "pass/fail per category",
+    "notes"
+   ],
+   "logic": "Fixed 8-category list; one prompt per category.",
+   "concepts": [
+    "clr",
+    "current-reality-tree"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-dettmer-logical-thinking-process"
+   ]
+  },
+  {
+   "id": "three-questions-template",
+   "name": "Three questions worksheet",
+   "kind": "template",
+   "purpose": "Answer what to change, to what, and how, with links to trees.",
+   "inputs": [
+    "system",
+    "UDEs"
+   ],
+   "outputs": [
+    "core problem",
+    "injection",
+    "obstacles and steps"
+   ],
+   "logic": "Three sections; each links the right tree type.",
+   "concepts": [
+    "three-questions",
+    "management-skills"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-the-goal",
+    "bk-its-not-luck"
+   ]
+  },
+  {
+   "id": "socratic-question-deck",
+   "name": "Jonah question deck",
+   "kind": "checklist",
+   "purpose": "Ask Jonah-style questions about a system instead of giving answers.",
+   "inputs": [
+    "system type"
+   ],
+   "outputs": [
+    "question list by concept"
+   ],
+   "logic": "Fixed question sets keyed by concept id.",
+   "concepts": [
+    "socratic-method"
+   ],
+   "priority": 3,
+   "reuse": [
+    "repo-juergenkanz-socratictoc"
+   ],
+   "refs": [
+    "bk-the-goal"
+   ]
+  },
+  {
+   "id": "ccpm-planner",
+   "name": "Critical chain planner",
+   "kind": "calculator",
+   "purpose": "Build a critical chain with project and feeding buffers.",
+   "inputs": [
+    "tasks: duration, resource, predecessors",
+    "cut factor (0.5)"
+   ],
+   "outputs": [
+    "critical chain",
+    "project buffer",
+    "feeding buffers",
+    "fever chart"
+   ],
+   "logic": "Cut durations; level resources; chain = longest resource-leveled path; project buffer = 50% of chain; feeding buffer = 50% of feeding path.",
+   "concepts": [
+    "critical-chain",
+    "buffer-management"
+   ],
+   "priority": 2,
+   "reuse": [
+    "repo-rnwolf-ccpm-scheduler"
+   ],
+   "refs": [
+    "bk-critical-chain"
+   ]
+  },
+  {
+   "id": "replenishment-sim",
+   "name": "Replenishment with dynamic buffer",
+   "kind": "simulator",
+   "purpose": "Compare forecast push with replenish-to-consumption and DBM.",
+   "inputs": [
+    "daily demand distribution",
+    "lead time",
+    "target stock",
+    "DBM on/off"
+   ],
+   "outputs": [
+    "stock-outs",
+    "average stock",
+    "target over time"
+   ],
+   "logic": "Each day order what was sold. DBM: if in red (< 1/3 target) for a lead time, target x 4/3; if green (> 2/3) for 3 lead times, target x 2/3.",
+   "concepts": [
+    "replenishment",
+    "buffer-management"
+   ],
+   "priority": 2,
+   "reuse": [
+    "repo-team-simpy-simpy"
+   ],
+   "refs": [
+    "bk-isnt-it-obvious",
+    "bk-toc-handbook"
+   ]
+  },
+  {
+   "id": "littles-law-calc",
+   "name": "Little's Law calculator",
+   "kind": "calculator",
+   "purpose": "Solve WIP = throughput x lead time for any one value.",
+   "inputs": [
+    "two of WIP, throughput, lead time"
+   ],
+   "outputs": [
+    "third value",
+    "effect of WIP cut"
+   ],
+   "logic": "L = lambda W.",
+   "concepts": [
+    "littles-law",
+    "batch-size"
+   ],
+   "priority": 1,
+   "reuse": [
+    "repo-presence-calculus-samplepath-flow"
+   ],
+   "refs": [
+    "pap-little-1961"
+   ]
+  },
+  {
+   "id": "kingman-calc",
+   "name": "Kingman queue calculator",
+   "kind": "calculator",
+   "purpose": "Show queue time versus utilization and variability.",
+   "inputs": [
+    "utilization",
+    "ca",
+    "cs",
+    "process time"
+   ],
+   "outputs": [
+    "queue time",
+    "curve over u"
+   ],
+   "logic": "CTq = ((ca^2+cs^2)/2)(u/(1-u)) te.",
+   "concepts": [
+    "kingman-vut",
+    "non-bottleneck"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-factory-physics"
+   ]
+  },
+  {
+   "id": "wsjf-calc",
+   "name": "Cost of delay / WSJF ranker",
+   "kind": "calculator",
+   "purpose": "Rank work by cost of delay per unit of constraint time.",
+   "inputs": [
+    "items: cost of delay per week, duration"
+   ],
+   "outputs": [
+    "WSJF rank"
+   ],
+   "logic": "WSJF = CoD / duration; sort descending.",
+   "concepts": [
+    "cost-of-delay"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-principles-of-product-development-flow"
+   ]
+  },
+  {
+   "id": "kanban-board",
+   "name": "Kanban board with WIP limits",
+   "kind": "board",
+   "purpose": "Visual pull board with WIP limits per column.",
+   "inputs": [
+    "columns",
+    "WIP limit per column",
+    "cards"
+   ],
+   "outputs": [
+    "blocked pulls",
+    "lead time per card"
+   ],
+   "logic": "Pull allowed only if column count < limit.",
+   "concepts": [
+    "wip-limit",
+    "littles-law"
+   ],
+   "priority": 3,
+   "reuse": [],
+   "refs": [
+    "bk-kanban-anderson"
+   ]
+  },
+  {
+   "id": "flow-metrics-board",
+   "name": "Flow metrics: CFD, cycle-time scatter, item age",
+   "kind": "board",
+   "purpose": "Show WIP, cycle time and aging work from item start and finish dates.",
+   "inputs": [
+    "items: start date, finish date, state history"
+   ],
+   "outputs": [
+    "cumulative flow diagram",
+    "cycle-time scatter with 50/85/95th percentile",
+    "work item age"
+   ],
+   "logic": "CFD: count entered per state per day; WIP = vertical gap; approx cycle time = horizontal gap. Percentiles over finished items.",
+   "concepts": [
+    "littles-law",
+    "wip-limit",
+    "buffer-management"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-actionable-agile-metrics"
+   ]
+  },
+  {
+   "id": "monte-carlo-forecast",
+   "name": "Monte Carlo delivery forecast",
+   "kind": "simulator",
+   "purpose": "Forecast when N items finish from past daily throughput.",
+   "inputs": [
+    "daily throughput history",
+    "items left",
+    "runs (10,000)"
+   ],
+   "outputs": [
+    "finish date distribution",
+    "50/85/95th percentile date"
+   ],
+   "logic": "Seeded: each run samples past days with replacement until items left = 0; report percentiles of days.",
+   "concepts": [
+    "statistical-fluctuations",
+    "throughput"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-actionable-agile-metrics"
+   ]
+  },
+  {
+   "id": "critical-wip-calc",
+   "name": "Critical WIP and best/worst case",
+   "kind": "calculator",
+   "purpose": "Compare a line's cycle time to best, worst and practical worst case.",
+   "inputs": [
+    "bottleneck rate rb",
+    "raw process time T0",
+    "WIP w"
+   ],
+   "outputs": [
+    "W0",
+    "best/worst/PWC throughput and cycle time",
+    "zone of the line"
+   ],
+   "logic": "W0 = rb T0. Best TH = min(w/T0, rb); worst TH = 1/T0; PWC TH = w/(W0 + w - 1) rb.",
+   "concepts": [
+    "littles-law",
+    "bottleneck",
+    "kingman-vut"
+   ],
+   "priority": 2,
+   "reuse": [],
+   "refs": [
+    "bk-factory-physics"
+   ]
+  },
+  {
+   "id": "control-chart",
+   "name": "Process behavior chart (XmR)",
+   "kind": "calculator",
+   "purpose": "Separate signal from noise before you react to a number.",
+   "inputs": [
+    "series of values"
+   ],
+   "outputs": [
+    "mean",
+    "natural process limits",
+    "signals"
+   ],
+   "logic": "Limits = mean +/- 2.66 x mean moving range; signal if a point is outside limits.",
+   "concepts": [
+    "statistical-fluctuations"
+   ],
+   "priority": 3,
+   "reuse": [],
+   "refs": [
+    "bk-out-of-the-crisis"
+   ]
+  },
+  {
+   "id": "vsm-template",
+   "name": "Value stream map",
+   "kind": "template",
+   "purpose": "Map steps, queues and times; find where lead time goes.",
+   "inputs": [
+    "steps with process time",
+    "inventory between steps",
+    "demand"
+   ],
+   "outputs": [
+    "timeline",
+    "value-added ratio",
+    "takt"
+   ],
+   "logic": "VA ratio = sum process time / lead time; takt = available time / demand.",
+   "concepts": [
+    "four-time-elements",
+    "batch-size",
+    "littles-law"
+   ],
+   "priority": 3,
+   "reuse": [],
+   "refs": [
+    "bk-learning-to-see"
+   ]
+  },
+  {
+   "id": "causal-loop-template",
+   "name": "Causal loop and archetype template",
+   "kind": "template",
+   "purpose": "Draw reinforcing and balancing loops; match a system archetype.",
+   "inputs": [
+    "variables",
+    "signed links",
+    "delays"
+   ],
+   "outputs": [
+    "loop diagram",
+    "loop type R/B",
+    "archetype match"
+   ],
+   "logic": "Loop sign = product of link signs; even number of minus = reinforcing.",
+   "concepts": [
+    "inertia",
+    "policy-constraint"
+   ],
+   "priority": 3,
+   "reuse": [],
+   "refs": [
+    "bk-fifth-discipline",
+    "bk-thinking-in-systems"
+   ]
+  }
+ ]
+}

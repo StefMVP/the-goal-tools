@@ -1,0 +1,101 @@
+{
+ "id": "tp-map",
+ "title": "Three questions mapped to Thinking Process tools",
+ "kind": "flow",
+ "concepts": [
+  "three-questions",
+  "thinking-processes",
+  "current-reality-tree",
+  "evaporating-cloud",
+  "future-reality-tree",
+  "prerequisite-tree",
+  "transition-tree"
+ ],
+ "chapters": [
+  40
+ ],
+ "nodes": [
+  {
+   "id": "q1",
+   "label": "What to change?",
+   "type": "question"
+  },
+  {
+   "id": "q2",
+   "label": "To what to change?",
+   "type": "question"
+  },
+  {
+   "id": "q3",
+   "label": "How to cause the change?",
+   "type": "question"
+  },
+  {
+   "id": "crt",
+   "label": "CRT: UDEs to core problem"
+  },
+  {
+   "id": "ec",
+   "label": "EC: core conflict to injection"
+  },
+  {
+   "id": "frt",
+   "label": "FRT + NBR: injection to desired effects"
+  },
+  {
+   "id": "prt",
+   "label": "PRT: obstacles to intermediate objectives"
+  },
+  {
+   "id": "tt",
+   "label": "TT: actions in order"
+  }
+ ],
+ "edges": [
+  {
+   "from": "q1",
+   "to": "crt"
+  },
+  {
+   "from": "crt",
+   "to": "ec"
+  },
+  {
+   "from": "q2",
+   "to": "ec"
+  },
+  {
+   "from": "ec",
+   "to": "frt"
+  },
+  {
+   "from": "q2",
+   "to": "frt"
+  },
+  {
+   "from": "frt",
+   "to": "prt"
+  },
+  {
+   "from": "q3",
+   "to": "prt"
+  },
+  {
+   "from": "prt",
+   "to": "tt"
+  },
+  {
+   "from": "q3",
+   "to": "tt"
+  }
+ ],
+ "notes": [
+  "The Goal asks the three questions; It's Not Luck shows the trees."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "bk-its-not-luck",
+  "bk-dettmer-logical-thinking-process"
+ ]
+}

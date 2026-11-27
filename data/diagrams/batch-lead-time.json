@@ -1,0 +1,94 @@
+{
+ "id": "batch-lead-time",
+ "title": "Lead time vs transfer batch size",
+ "kind": "series",
+ "concepts": [
+  "batch-size",
+  "four-time-elements",
+  "littles-law"
+ ],
+ "chapters": [
+  28
+ ],
+ "axes": {
+  "x": "transfer batch (units)",
+  "y": "lead time for a 100-unit order (min)"
+ },
+ "series": [
+  {
+   "name": "5 steps, 1 min/unit, no setup",
+   "points": [
+    [
+     1,
+     104
+    ],
+    [
+     2,
+     108
+    ],
+    [
+     5,
+     120
+    ],
+    [
+     10,
+     140
+    ],
+    [
+     20,
+     180
+    ],
+    [
+     50,
+     300
+    ],
+    [
+     100,
+     500
+    ]
+   ]
+  },
+  {
+   "name": "transfer batch = order (100)",
+   "points": [
+    [
+     1,
+     500
+    ],
+    [
+     2,
+     500
+    ],
+    [
+     5,
+     500
+    ],
+    [
+     10,
+     500
+    ],
+    [
+     20,
+     500
+    ],
+    [
+     50,
+     500
+    ],
+    [
+     100,
+     500
+    ]
+   ]
+  }
+ ],
+ "notes": [
+  "Flow shop, equal steps: lead time = order x t + (steps-1) x batch x t.",
+  "Small transfer batches overlap the steps."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-race",
+  "bk-factory-physics"
+ ]
+}

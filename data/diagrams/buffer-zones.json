@@ -1,0 +1,66 @@
+{
+ "id": "buffer-zones",
+ "title": "Buffer zones and penetration",
+ "kind": "flow",
+ "concepts": [
+  "buffer-management",
+  "buffer",
+  "priority-tags"
+ ],
+ "chapters": [],
+ "nodes": [
+  {
+   "id": "green",
+   "label": "Green: < 1/3 used; no action",
+   "type": "zone"
+  },
+  {
+   "id": "yellow",
+   "label": "Yellow: 1/3-2/3 used; plan action",
+   "type": "zone"
+  },
+  {
+   "id": "red",
+   "label": "Red: > 2/3 used; expedite",
+   "type": "zone"
+  },
+  {
+   "id": "black",
+   "label": "Black: > 100%; late",
+   "type": "zone"
+  },
+  {
+   "id": "pareto",
+   "label": "Pareto of red causes -> POOGI",
+   "type": "action"
+  }
+ ],
+ "edges": [
+  {
+   "from": "green",
+   "to": "yellow",
+   "label": "time passes"
+  },
+  {
+   "from": "yellow",
+   "to": "red"
+  },
+  {
+   "from": "red",
+   "to": "black"
+  },
+  {
+   "from": "red",
+   "to": "pareto",
+   "label": "record cause"
+  }
+ ],
+ "notes": [
+  "Penetration = elapsed / buffer for an open order."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-toc-handbook",
+  "web-tocico-dictionary"
+ ]
+}

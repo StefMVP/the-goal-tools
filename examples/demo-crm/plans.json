@@ -1,0 +1,9 @@
+{
+ "oe": 42000,
+ "resources": [{"id": "Sales", "cap": 9600}, {"id": "SE", "cap": 4800}, {"id": "CSM", "cap": 9600}],
+ "products": [
+  {"id": "Lite", "price": 400, "material": 60, "demand": 40, "minutes": {"Sales": 60, "SE": 30, "CSM": 60}},
+  {"id": "Pro", "price": 1200, "material": 150, "demand": 25, "minutes": {"Sales": 180, "SE": 120, "CSM": 150}},
+  {"id": "Scale", "price": 3800, "material": 400, "demand": 12, "minutes": {"Sales": 480, "SE": 600, "CSM": 360}}
+ ]
+}

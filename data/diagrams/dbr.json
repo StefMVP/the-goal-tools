@@ -1,0 +1,94 @@
+{
+ "id": "dbr",
+ "title": "Drum-Buffer-Rope",
+ "kind": "flow",
+ "concepts": [
+  "drum-buffer-rope",
+  "buffer",
+  "rope",
+  "subordinate"
+ ],
+ "chapters": [
+  25,
+  26
+ ],
+ "nodes": [
+  {
+   "id": "rm",
+   "label": "Material release (gate)",
+   "type": "source"
+  },
+  {
+   "id": "nb1",
+   "label": "Non-bottleneck steps",
+   "type": "resource"
+  },
+  {
+   "id": "buf",
+   "label": "Constraint time buffer",
+   "type": "buffer"
+  },
+  {
+   "id": "drum",
+   "label": "Constraint (drum)",
+   "type": "constraint"
+  },
+  {
+   "id": "nb2",
+   "label": "Steps after constraint",
+   "type": "resource"
+  },
+  {
+   "id": "shipbuf",
+   "label": "Shipping buffer",
+   "type": "buffer"
+  },
+  {
+   "id": "cust",
+   "label": "Customer due date",
+   "type": "sink"
+  }
+ ],
+ "edges": [
+  {
+   "from": "rm",
+   "to": "nb1"
+  },
+  {
+   "from": "nb1",
+   "to": "buf"
+  },
+  {
+   "from": "buf",
+   "to": "drum"
+  },
+  {
+   "from": "drum",
+   "to": "nb2"
+  },
+  {
+   "from": "nb2",
+   "to": "shipbuf"
+  },
+  {
+   "from": "shipbuf",
+   "to": "cust"
+  },
+  {
+   "from": "drum",
+   "to": "rm",
+   "type": "rope",
+   "label": "rope: release = drum start - buffer"
+  }
+ ],
+ "notes": [
+  "Drum: schedule of the constraint. Buffer: time protection in front of it. Rope: signal from drum to release.",
+  "The book shows the rope as release of material by the bottleneck schedule; the names come later (The Race)."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "bk-the-race",
+  "wiki-drum-buffer-rope"
+ ]
+}

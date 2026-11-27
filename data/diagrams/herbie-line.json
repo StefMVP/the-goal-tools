@@ -1,0 +1,92 @@
+{
+ "id": "herbie-line",
+ "title": "Herbie hike: the slowest walker sets troop speed",
+ "kind": "flow",
+ "concepts": [
+  "herbie-hike",
+  "bottleneck",
+  "rope",
+  "exploit-constraint"
+ ],
+ "chapters": [
+  13,
+  15
+ ],
+ "nodes": [
+  {
+   "id": "start",
+   "label": "Trail start (raw material)",
+   "type": "source"
+  },
+  {
+   "id": "fast",
+   "label": "Fast walkers",
+   "type": "resource"
+  },
+  {
+   "id": "herbie",
+   "label": "Herbie (slowest)",
+   "type": "constraint"
+  },
+  {
+   "id": "rear",
+   "label": "Walkers behind Herbie",
+   "type": "resource"
+  },
+  {
+   "id": "end",
+   "label": "Troop arrival (throughput)",
+   "type": "sink"
+  },
+  {
+   "id": "fix1",
+   "label": "Fix 1: put Herbie at front",
+   "type": "injection"
+  },
+  {
+   "id": "fix2",
+   "label": "Fix 2: share Herbie's pack",
+   "type": "injection"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "fast"
+  },
+  {
+   "from": "fast",
+   "to": "herbie",
+   "label": "gap grows (inventory)"
+  },
+  {
+   "from": "herbie",
+   "to": "rear",
+   "label": "rear waits"
+  },
+  {
+   "from": "rear",
+   "to": "end"
+  },
+  {
+   "from": "fix1",
+   "to": "herbie",
+   "type": "injection",
+   "label": "release at constraint pace"
+  },
+  {
+   "from": "fix2",
+   "to": "herbie",
+   "type": "injection",
+   "label": "exploit / elevate"
+  }
+ ],
+ "notes": [
+  "Line length = inventory. Speed of the troop = speed of Herbie.",
+  "Fix 1 is the rope; fix 2 raises constraint capacity."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal"
+ ]
+}

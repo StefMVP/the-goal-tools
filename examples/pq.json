@@ -1,0 +1,47 @@
+{
+ "products": [
+  {
+   "id": "P",
+   "price": 90,
+   "material": 45,
+   "demand": 100,
+   "minutes": {
+    "A": 15,
+    "B": 15,
+    "C": 15,
+    "D": 15
+   }
+  },
+  {
+   "id": "Q",
+   "price": 100,
+   "material": 40,
+   "demand": 50,
+   "minutes": {
+    "A": 10,
+    "B": 30,
+    "C": 5,
+    "D": 5
+   }
+  }
+ ],
+ "resources": [
+  {
+   "id": "A",
+   "cap": 2400
+  },
+  {
+   "id": "B",
+   "cap": 2400
+  },
+  {
+   "id": "C",
+   "cap": 2400
+  },
+  {
+   "id": "D",
+   "cap": 2400
+  }
+ ],
+ "oe": 6000
+}

@@ -1,0 +1,108 @@
+{
+ "id": "tioe-triangle",
+ "title": "T, I, OE and the global measures",
+ "kind": "triangle",
+ "concepts": [
+  "throughput",
+  "inventory",
+  "operating-expense",
+  "global-measures",
+  "goal-make-money"
+ ],
+ "chapters": [
+  6,
+  8
+ ],
+ "nodes": [
+  {
+   "id": "T",
+   "label": "Throughput: money in from sales (up)",
+   "type": "measure"
+  },
+  {
+   "id": "I",
+   "label": "Inventory: money tied up (down)",
+   "type": "measure"
+  },
+  {
+   "id": "OE",
+   "label": "Operating expense: money out (down)",
+   "type": "measure"
+  },
+  {
+   "id": "NP",
+   "label": "Net profit = T - OE",
+   "type": "global"
+  },
+  {
+   "id": "ROI",
+   "label": "ROI = (T - OE) / I",
+   "type": "global"
+  },
+  {
+   "id": "CF",
+   "label": "Cash flow (survival)",
+   "type": "global"
+  },
+  {
+   "id": "goal",
+   "label": "Goal: make money now and in the future",
+   "type": "goal"
+  }
+ ],
+ "edges": [
+  {
+   "from": "T",
+   "to": "NP"
+  },
+  {
+   "from": "OE",
+   "to": "NP"
+  },
+  {
+   "from": "T",
+   "to": "ROI"
+  },
+  {
+   "from": "OE",
+   "to": "ROI"
+  },
+  {
+   "from": "I",
+   "to": "ROI"
+  },
+  {
+   "from": "T",
+   "to": "CF"
+  },
+  {
+   "from": "I",
+   "to": "CF"
+  },
+  {
+   "from": "OE",
+   "to": "CF"
+  },
+  {
+   "from": "NP",
+   "to": "goal"
+  },
+  {
+   "from": "ROI",
+   "to": "goal"
+  },
+  {
+   "from": "CF",
+   "to": "goal"
+  }
+ ],
+ "notes": [
+  "Order of focus in TOC: T first, then I, then OE.",
+  "Triangle corners T, I, OE; centre the goal."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-the-goal",
+  "wiki-throughput-accounting"
+ ]
+}

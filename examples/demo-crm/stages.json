@@ -1,0 +1,7 @@
+[
+ {"name": "Qualify", "cap": 14, "var": 0.3, "wip": 0},
+ {"name": "Demo", "cap": 11, "var": 0.3, "wip": 0},
+ {"name": "Security", "cap": 6, "var": 0.5, "wip": 0},
+ {"name": "Proposal", "cap": 10, "var": 0.2, "wip": 0},
+ {"name": "Contract", "cap": 9, "var": 0.4, "wip": 0}
+]

@@ -1,0 +1,41 @@
+id,stage,start,end,cause,owner
+W-001,order,2026-03-04T09:56,2026-03-04T15:31,,team-a
+W-001,build,2026-03-04T15:31,2026-03-05T22:13,,team-c
+W-001,ship,2026-03-06T04:13,2026-03-09T20:27,,team-c
+W-001,install,2026-03-09T22:27,2026-03-13T06:51,tech capacity,team-a
+W-001,live,2026-03-13T06:51,2026-03-14T13:02,,team-c
+W-002,order,2026-03-05T21:23,2026-03-07T00:03,,team-a
+W-002,build,2026-03-07T02:03,2026-03-09T06:21,,team-a
+W-002,ship,2026-03-09T12:21,2026-03-11T18:46,,team-a
+W-002,install,2026-03-11T18:46,2026-03-25T07:28,customer reschedule,team-a
+W-002,live,2026-03-25T07:28,2026-03-26T09:09,config error,team-b
+W-003,order,2026-03-06T20:08,2026-03-07T02:18,,team-c
+W-003,build,2026-03-07T02:18,2026-03-10T01:00,parts short,team-a
+W-003,ship,2026-03-10T07:00,2026-03-12T04:07,carrier delay,team-c
+W-003,install,2026-03-12T06:07,2026-03-21T14:32,tech capacity,team-a
+W-003,live,2026-03-21T20:32,2026-03-22T16:44,config error,team-a
+W-004,order,2026-03-08T20:11,2026-03-09T12:51,,team-c
+W-004,build,2026-03-09T14:51,2026-03-10T22:39,parts short,team-a
+W-004,ship,2026-03-11T04:39,2026-03-12T23:53,carrier delay,team-c
+W-004,install,2026-03-12T23:53,2026-03-22T16:41,tech capacity,team-c
+W-004,live,2026-03-22T22:41,2026-03-23T19:30,config error,team-b
+W-005,order,2026-03-10T08:44,2026-03-11T09:30,credit check,team-a
+W-005,build,2026-03-11T15:30,2026-03-13T07:04,,team-a
+W-005,ship,2026-03-13T07:04,2026-03-16T17:02,,team-b
+W-005,install,2026-03-16T17:02,2026-03-22T00:44,customer reschedule,team-a
+W-005,live,2026-03-22T06:44,2026-03-23T12:43,config error,team-a
+W-006,order,2026-03-10T21:57,2026-03-12T01:59,credit check,team-b
+W-006,build,2026-03-12T07:59,2026-03-14T12:03,parts short,team-b
+W-006,ship,2026-03-14T12:03,2026-03-18T11:51,,team-c
+W-006,install,2026-03-18T13:51,2026-03-22T13:51,tech capacity,team-a
+W-006,live,2026-03-22T13:51,2026-03-24T00:27,config error,team-c
+W-007,order,2026-03-12T13:26,2026-03-13T12:49,,team-c
+W-007,build,2026-03-13T14:49,2026-03-16T13:26,,team-c
+W-007,ship,2026-03-16T19:26,2026-03-18T03:41,carrier delay,team-b
+W-007,install,2026-03-18T09:41,2026-03-25T03:29,customer reschedule,team-b
+W-007,live,2026-03-25T03:29,2026-03-26T07:49,config error,team-c
+W-008,order,2026-03-14T01:59,2026-03-14T10:06,credit check,team-b
+W-008,build,2026-03-14T16:06,2026-03-16T16:28,,team-a
+W-008,ship,2026-03-16T18:28,2026-03-20T01:22,carrier delay,team-c
+W-008,install,2026-03-20T01:22,2026-03-29T15:29,site not ready,team-a
+W-008,live,2026-03-29T15:29,2026-03-31T12:56,config error,team-a

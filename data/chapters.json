@@ -1,0 +1,1032 @@
+{
+ "edition": {
+  "basis": "Revised 3rd edition (2004), 40 chapters; same chapter structure as the 2006 full-cast audiobook. 30th anniversary edition (2014) also has 40 chapters.",
+  "chapter_count": 40,
+  "notes": [
+   "1st (1984) and 1986 editions: about 30 chapters (inferred); chapters 31-40 (division manager, five focusing steps, three questions) added by the 1992 2nd revised edition.",
+   "2004 3rd edition adds interviews (case studies) by David Whitford.",
+   "2014 30th anniversary edition: updated text, five focusing steps stated more explicitly, essay 'Standing on the Shoulders of Giants' (TOC and Toyota); interviews removed.",
+   "2006 audiobook: HighBridge Audio, full cast, about 11.5 h, from the 3rd edition.",
+   "Summaries disagree by one chapter for T/I/OE (6 vs 8), bottleneck discovery (18 vs 19), late-order priority (20 vs 21), Julie's if-then talk (38 vs 39). This file follows sum-fredlybrand-plot and sum-velocity."
+  ],
+  "refs": [
+   "bk-the-goal",
+   "web-northriver-30th",
+   "wiki-the-goal-novel",
+   "web-audiofile-2006",
+   "sum-fredlybrand-plot",
+   "sum-velocity"
+  ]
+ },
+ "chapters": [
+  {
+   "n": 1,
+   "title": "One late order stops the plant",
+   "concepts": [
+    "dependent-events",
+    "local-efficiency-fallacy"
+   ],
+   "events_as_mechanism": [
+    "One missing part holds a full customer order: the order is only as fast as its slowest part.",
+    "Expediting breaks setups on other work, so other orders slip.",
+    "Head office gives the plant 3 months before closure."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Expediting ships one order, delays others",
+   "concepts": [
+    "local-efficiency-fallacy",
+    "bottleneck"
+   ],
+   "events_as_mechanism": [
+    "The late order ships only with overtime after a key machine (NCX-10) is repaired.",
+    "WIP is high everywhere, yet orders are late: busy is not productive."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Division numbers fail; measures do not guide",
+   "concepts": [
+    "global-measures",
+    "local-efficiency-fallacy"
+   ],
+   "events_as_mechanism": [
+    "Division-level reports show losses; the division has about one year.",
+    "Reported measures do not tell a plant manager what to do."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Robots raise efficiency, not profit",
+   "concepts": [
+    "productivity",
+    "local-efficiency-fallacy",
+    "goal-make-money"
+   ],
+   "events_as_mechanism": [
+    "A 36% efficiency gain in one area gives no increase in shipments and no cut in cost.",
+    "Jonah predicts high inventory and late orders from the efficiency claim alone."
+   ],
+   "jonah_questions": [
+    "Did plant shipments go up after the robots?",
+    "Did inventory or headcount go down?",
+    "What is the goal of your company?"
+   ],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "The goal is to make money",
+   "concepts": [
+    "goal-make-money",
+    "productivity"
+   ],
+   "events_as_mechanism": [
+    "Quality, cost, technology and jobs are tested one by one: each is a means, not the goal.",
+    "Full warehouses of unsold goods show that production is not sales."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Net profit, ROI and cash flow",
+   "concepts": [
+    "global-measures",
+    "goal-make-money"
+   ],
+   "events_as_mechanism": [
+    "Three bottom-line measures define money-making for the whole firm.",
+    "They do not tell the floor what to do: an operational link is missing."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": "tioe-triangle",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Decision to find Jonah",
+   "concepts": [
+    "goal-make-money"
+   ],
+   "events_as_mechanism": [
+    "Alex decides to fix the plant with a method, not with more expediting."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Throughput, inventory, operating expense defined",
+   "concepts": [
+    "throughput",
+    "inventory",
+    "operating-expense",
+    "global-measures"
+   ],
+   "events_as_mechanism": [
+    "Three operational measures replace local measures: money in (T), money held (I), money out (OE).",
+    "Throughput counts at the sale, not at production."
+   ],
+   "jonah_questions": [
+    "What is the goal, in measures the floor can use?",
+    "Is a product in the warehouse throughput?"
+   ],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": "tioe-triangle",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Robots judged by T, I, OE",
+   "concepts": [
+    "local-efficiency-fallacy",
+    "activation-vs-utilization",
+    "throughput",
+    "inventory"
+   ],
+   "events_as_mechanism": [
+    "Robots run to keep their efficiency high and make parts no order needs.",
+    "Inventory goes up; throughput and OE stay flat."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Team adopts the measures",
+   "concepts": [
+    "inventory",
+    "operating-expense",
+    "throughput"
+   ],
+   "events_as_mechanism": [
+    "Machines and buildings count as inventory (money held to sell later through depreciation).",
+    "Team checks every activity against the three measures."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "I",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Balanced plant goes bankrupt",
+   "concepts": [
+    "balanced-plant-fallacy",
+    "dependent-events",
+    "statistical-fluctuations",
+    "local-efficiency-fallacy"
+   ],
+   "events_as_mechanism": [
+    "A plant that runs every resource efficiently builds excess stock.",
+    "Capacity cut to match demand at every resource gives missed shipments: fluctuations accumulate down a dependent chain."
+   ],
+   "jonah_questions": [
+    "What happens when dependent events combine with statistical fluctuations?",
+    "Why is a plant with every capacity matched to demand close to bankruptcy?"
+   ],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Home conflict",
+   "concepts": [
+    "goal-make-money"
+   ],
+   "events_as_mechanism": [
+    "Personal goals conflict with job demands; the same goal question applies to life."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Scout hike: line spreads out",
+   "concepts": [
+    "herbie-hike",
+    "dependent-events",
+    "statistical-fluctuations"
+   ],
+   "events_as_mechanism": [
+    "The troop line spreads: gaps (inventory) grow behind slow walkers.",
+    "Troop arrival time equals the arrival time of the slowest walker."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "herbie-line",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Matchstick and dice game",
+   "concepts": [
+    "matchstick-dice-game",
+    "statistical-fluctuations",
+    "dependent-events"
+   ],
+   "events_as_mechanism": [
+    "Five stations, each a die with average 3.5, pass matches in a line.",
+    "Output falls below 3.5 per round and queues grow: a station cannot use a high roll if no matches wait for it."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "dice-game-wip",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Herbie goes to the front",
+   "concepts": [
+    "herbie-hike",
+    "bottleneck",
+    "rope",
+    "exploit-constraint",
+    "subordinate"
+   ],
+   "events_as_mechanism": [
+    "Herbie at the front: the line cannot spread beyond his pace (release at constraint pace).",
+    "Other scouts carry Herbie's load: the constraint goes faster, so the troop goes faster."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "herbie-line",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious",
+    "sum-litcharts"
+   ]
+  },
+  {
+   "n": 16,
+   "title": "Julie leaves",
+   "concepts": [
+    "goal-make-money"
+   ],
+   "events_as_mechanism": [
+    "No TOC mechanism; personal subplot."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 17,
+   "title": "Robot line test: fluctuations cap output",
+   "concepts": [
+    "dependent-events",
+    "statistical-fluctuations",
+    "bottleneck",
+    "buffer"
+   ],
+   "events_as_mechanism": [
+    "A rush order of subassemblies depends on upstream rates that vary.",
+    "Robot capacity caps the line; a pile in front of it is what protects its output."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 18,
+   "title": "Find the bottlenecks",
+   "concepts": [
+    "opt-rules",
+    "bottleneck",
+    "non-bottleneck",
+    "identify-constraint",
+    "balanced-plant-fallacy"
+   ],
+   "events_as_mechanism": [
+    "Team compares demand hours with available hours per resource and looks at queues.",
+    "NCX-10 and heat treat have capacity below demand: these are the bottlenecks."
+   ],
+   "jonah_questions": [
+    "Is a bottleneck good or bad?",
+    "Do you balance capacity or flow with demand?"
+   ],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "plant-bottlenecks",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 19,
+   "title": "Jonah tours the plant",
+   "concepts": [
+    "opt-rules",
+    "bottleneck-hour-lost",
+    "bottleneck-idle-time",
+    "quality-before-bottleneck",
+    "offload-bottleneck",
+    "exploit-constraint",
+    "non-bottleneck-mirage"
+   ],
+   "events_as_mechanism": [
+    "Bottlenecks stand idle at breaks and while waiting for parts.",
+    "Team values a lost bottleneck hour at about 2,735 dollars (plant OE / bottleneck hours); Jonah: it is the throughput of the whole plant.",
+    "Some parts go through heat treat with no need; bad parts get bottleneck time."
+   ],
+   "jonah_questions": [
+    "Why is the bottleneck idle during lunch?",
+    "Must all these parts go through heat treat?",
+    "Can an old machine or a vendor do the same work?",
+    "Where is quality checked: before or after the bottleneck?"
+   ],
+   "measures_touched": [
+    "T",
+    "OE"
+   ],
+   "diagram": "plant-bottlenecks",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 20,
+   "title": "Plan to exploit the bottlenecks",
+   "concepts": [
+    "exploit-constraint",
+    "quality-before-bottleneck",
+    "bottleneck-idle-time"
+   ],
+   "events_as_mechanism": [
+    "Team stages QC before bottlenecks, staggers breaks and runs late orders first on the bottleneck."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 21,
+   "title": "Red and green tags",
+   "concepts": [
+    "priority-tags",
+    "subordinate",
+    "bottleneck"
+   ],
+   "events_as_mechanism": [
+    "Red tags: parts for bottlenecks go first at every station; green: the rest.",
+    "About 90% of late orders wait for bottleneck parts."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "plant-bottlenecks",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 22,
+   "title": "First results; old machine back",
+   "concepts": [
+    "offload-bottleneck",
+    "elevate-constraint",
+    "quality-before-bottleneck"
+   ],
+   "events_as_mechanism": [
+    "Late orders ship; average lateness falls.",
+    "An old machine returns to add capacity at the NCX-10 work."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 23,
+   "title": "Never starve the bottleneck",
+   "concepts": [
+    "bottleneck-idle-time",
+    "exploit-constraint"
+   ],
+   "events_as_mechanism": [
+    "Bottlenecks wait for workers between batches.",
+    "Dedicated crews and a foreman stay at each bottleneck."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 24,
+   "title": "Shortages appear in assembly",
+   "concepts": [
+    "constraint-shift",
+    "priority-tags"
+   ],
+   "events_as_mechanism": [
+    "Shipments set records, then final assembly lacks green parts.",
+    "The shortage looks like a new bottleneck."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "plant-bottlenecks",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 25,
+   "title": "Material released too fast",
+   "concepts": [
+    "opt-rules",
+    "activation-vs-utilization",
+    "non-bottleneck",
+    "rope",
+    "constraint-shift"
+   ],
+   "events_as_mechanism": [
+    "Release by local efficiency piles red work in front of bottlenecks.",
+    "Non-bottlenecks spend time on red work too early, so green parts are late and assembly waits."
+   ],
+   "jonah_questions": [
+    "Is the new shortage a new bottleneck or a release problem?",
+    "How do you release material only as the bottleneck needs it?"
+   ],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "dbr",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 26,
+   "title": "Drum and rope",
+   "concepts": [
+    "drum-buffer-rope",
+    "rope",
+    "subordinate",
+    "herbie-hike",
+    "non-bottleneck"
+   ],
+   "events_as_mechanism": [
+    "Material release is tied to the bottleneck schedule, as Herbie at the front.",
+    "Non-bottleneck workers can idle: idle time costs less than excess stock."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "dbr",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 27,
+   "title": "Plant must give 15% more",
+   "concepts": [
+    "global-measures",
+    "market-constraint"
+   ],
+   "events_as_mechanism": [
+    "The plant is the only profitable unit; the division asks for 15% more.",
+    "More throughput now needs more orders, not only more output."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 28,
+   "title": "Halve the batches",
+   "concepts": [
+    "opt-rules",
+    "batch-size",
+    "four-time-elements",
+    "non-bottleneck-mirage"
+   ],
+   "events_as_mechanism": [
+    "Half batch size cuts queue and wait time, so lead time and WIP fall.",
+    "Extra setups at non-bottlenecks use idle time: no real cost."
+   ],
+   "jonah_questions": [
+    "What if you cut batch sizes in half?",
+    "What does a setup at a non-bottleneck cost?"
+   ],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": "batch-lead-time",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 29,
+   "title": "Small batches win an order",
+   "concepts": [
+    "lead-time-advantage",
+    "cost-world-vs-throughput-world",
+    "batch-size"
+   ],
+   "events_as_mechanism": [
+    "Cost accounting shows a higher unit cost from more setups.",
+    "Short lead time in small weekly lots wins a large order."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 30,
+   "title": "Audit and inventory valuation",
+   "concepts": [
+    "inventory-valuation-effect",
+    "cost-world-vs-throughput-world"
+   ],
+   "events_as_mechanism": [
+    "Lower inventory reduces reported profit through valuation; the audit shows a smaller gain.",
+    "A large new customer order follows from short lead time."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 31,
+   "title": "Plant saved; Alex promoted",
+   "concepts": [
+    "global-measures",
+    "cost-world-vs-throughput-world"
+   ],
+   "events_as_mechanism": [
+    "The plant stays open on throughput results despite cost measures.",
+    "Alex becomes division manager: the system to manage gets larger."
+   ],
+   "jonah_questions": [
+    "What must a manager do to run any system?"
+   ],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-rumproarious"
+   ]
+  },
+  {
+   "n": 32,
+   "title": "How Jonah taught",
+   "concepts": [
+    "socratic-method"
+   ],
+   "events_as_mechanism": [
+    "Jonah asked; Alex found the answers, so he owned them and the team did too."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 33,
+   "title": "New division team",
+   "concepts": [
+    "management-skills"
+   ],
+   "events_as_mechanism": [
+    "The plant team takes division roles; the method must now work without Jonah."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 34,
+   "title": "What is a manager's job",
+   "concepts": [
+    "management-skills",
+    "three-questions"
+   ],
+   "events_as_mechanism": [
+    "Team asks which process a manager uses on any system, not only a plant."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 35,
+   "title": "Periodic table: find the order",
+   "concepts": [
+    "management-skills",
+    "pooi"
+   ],
+   "events_as_mechanism": [
+    "Mendeleev's table shows that order in data lets you predict.",
+    "Team looks for the same order in its own steps."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 36,
+   "title": "Five focusing steps written",
+   "concepts": [
+    "five-focusing-steps",
+    "identify-constraint",
+    "exploit-constraint",
+    "subordinate",
+    "elevate-constraint",
+    "pooi"
+   ],
+   "events_as_mechanism": [
+    "Team writes the process it used: identify, exploit, subordinate, elevate, repeat.",
+    "Throughput comes before cost cuts."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "OE"
+   ],
+   "diagram": "five-steps-loop",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-tcagley"
+   ]
+  },
+  {
+   "n": 37,
+   "title": "Inertia: old rules hold capacity",
+   "concepts": [
+    "inertia",
+    "policy-constraint",
+    "market-constraint",
+    "constraint-shift"
+   ],
+   "events_as_mechanism": [
+    "Old release rules stay after the constraint moves and hold work back.",
+    "When removed, about 20% spare capacity appears: the constraint moves to the market."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": "five-steps-loop",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-tcagley"
+   ]
+  },
+  {
+   "n": 38,
+   "title": "Sell spare capacity in Europe",
+   "concepts": [
+    "excess-capacity-pricing",
+    "market-constraint",
+    "cost-world-vs-throughput-world",
+    "throughput"
+   ],
+   "events_as_mechanism": [
+    "A European order below normal price is taken: price is above variable cost and OE does not change.",
+    "Separate market, so domestic prices hold."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "OE"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity",
+    "sum-tcagley"
+   ]
+  },
+  {
+   "n": 39,
+   "title": "New bottlenecks, lead time grows",
+   "concepts": [
+    "constraint-shift",
+    "buffer",
+    "capacity-constrained-resource"
+   ],
+   "events_as_mechanism": [
+    "More orders create new bottlenecks; lead time goes from 2 to 4 weeks and inventory rises.",
+    "Effect-cause-effect reasoning ('if this, then also that') finds the cause."
+   ],
+   "jonah_questions": [],
+   "measures_touched": [
+    "T",
+    "I"
+   ],
+   "diagram": null,
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  },
+  {
+   "n": 40,
+   "title": "Three questions",
+   "concepts": [
+    "three-questions",
+    "management-skills",
+    "thinking-processes",
+    "current-reality-tree"
+   ],
+   "events_as_mechanism": [
+    "Alex and Lou trace the division problems to core causes.",
+    "Alex decides to be his own Jonah: what to change, to what to change, how to cause the change."
+   ],
+   "jonah_questions": [
+    "What to change?",
+    "What to change to?",
+    "How to cause the change?"
+   ],
+   "measures_touched": [
+    "T",
+    "I",
+    "OE"
+   ],
+   "diagram": "tp-map",
+   "refs": [
+    "bk-the-goal",
+    "sum-fredlybrand-plot",
+    "sum-velocity"
+   ]
+  }
+ ]
+}

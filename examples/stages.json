@@ -1,0 +1,32 @@
+[
+ {
+  "name": "Intake",
+  "cap": 12,
+  "var": 0.3,
+  "wip": 0
+ },
+ {
+  "name": "Design",
+  "cap": 8,
+  "var": 0.2,
+  "wip": 0
+ },
+ {
+  "name": "Build",
+  "cap": 6,
+  "var": 0.5,
+  "wip": 0
+ },
+ {
+  "name": "Review",
+  "cap": 9,
+  "var": 0.3,
+  "wip": 0
+ },
+ {
+  "name": "Release",
+  "cap": 14,
+  "var": 0.2,
+  "wip": 0
+ }
+]

@@ -1,0 +1,78 @@
+{
+ "id": "ccpm-buffers",
+ "title": "Critical chain with buffers",
+ "kind": "flow",
+ "concepts": [
+  "critical-chain",
+  "buffer-management"
+ ],
+ "chapters": [],
+ "nodes": [
+  {
+   "id": "t1",
+   "label": "Task A (50% estimate)"
+  },
+  {
+   "id": "t2",
+   "label": "Task B, resource R1"
+  },
+  {
+   "id": "t3",
+   "label": "Task C, resource R1"
+  },
+  {
+   "id": "f1",
+   "label": "Feeding path task D"
+  },
+  {
+   "id": "fb",
+   "label": "Feeding buffer",
+   "type": "buffer"
+  },
+  {
+   "id": "pb",
+   "label": "Project buffer",
+   "type": "buffer"
+  },
+  {
+   "id": "end",
+   "label": "Due date",
+   "type": "sink"
+  }
+ ],
+ "edges": [
+  {
+   "from": "t1",
+   "to": "t2"
+  },
+  {
+   "from": "t2",
+   "to": "t3",
+   "label": "resource dependency"
+  },
+  {
+   "from": "f1",
+   "to": "fb"
+  },
+  {
+   "from": "fb",
+   "to": "t3"
+  },
+  {
+   "from": "t3",
+   "to": "pb"
+  },
+  {
+   "from": "pb",
+   "to": "end"
+  }
+ ],
+ "notes": [
+  "Safety moved from tasks into buffers. Track project buffer used vs chain done (fever chart)."
+ ],
+ "asset": null,
+ "refs": [
+  "bk-critical-chain",
+  "wiki-critical-chain"
+ ]
+}
